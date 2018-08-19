@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 ## @file
 # process FV generation
 #
@@ -21,10 +20,11 @@ import subprocess
 from io import BytesIO
 from struct import *
 
-from . import Ffs
-from . import AprioriSection
-from . import FfsFileStatement
-from .GenFdsGlobalVariable import GenFdsGlobalVariable
+import Ffs
+import AprioriSection
+import FfsFileStatement
+from GenFdsGlobalVariable import GenFdsGlobalVariable
+from GenFds import GenFds
 from CommonDataClass.FdfClass import FvClassObject
 from Common.Misc import SaveFileOnChange, PackGUID
 from Common.LongFilePathSupport import CopyLongFilePath
@@ -53,7 +53,7 @@ class FV (FvClassObject):
         self.FvForceRebase = None
         self.FvRegionInFD = None
         self.UsedSizeEnable = False
-
+        
     ## AddToBuffer()
     #
     #   Generate Fv and add it to the Buffer
@@ -70,9 +70,9 @@ class FV (FvClassObject):
     #
     def AddToBuffer (self, Buffer, BaseAddress=None, BlockSize= None, BlockNum=None, ErasePloarity='1', VtfDict=None, MacroDict = {}, Flag=False) :
 
-        if BaseAddress is None and self.UiFvName.upper() + 'fv' in GenFdsGlobalVariable.ImageBinDict:
-            return GenFdsGlobalVariable.ImageBinDict[self.UiFvName.upper() + 'fv']
-
+        if BaseAddress is None and self.UiFvName.upper() + 'fv' in GenFds.ImageBinDict:
+            return GenFds.ImageBinDict[self.UiFvName.upper() + 'fv']
+        
         #
         # Check whether FV in Capsule is in FD flash region.
         # If yes, return error. Doesn't support FV in Capsule image is also in FD flash region.
@@ -84,7 +84,7 @@ class FV (FvClassObject):
                         for RegionData in RegionObj.RegionDataList:
                             if RegionData.endswith(".fv"):
                                 continue
-                            elif RegionData.upper() + 'fv' in GenFdsGlobalVariable.ImageBinDict:
+                            elif RegionData.upper() + 'fv' in GenFds.ImageBinDict:
                                 continue
                             elif self.UiFvName.upper() == RegionData.upper():
                                 GenFdsGlobalVariable.ErrorLogger("Capsule %s in FD region can't contain a FV %s in FD region." % (self.CapsuleName, self.UiFvName.upper()))
@@ -92,7 +92,7 @@ class FV (FvClassObject):
             GenFdsGlobalVariable.InfLogger( "\nGenerating %s FV" %self.UiFvName)
         GenFdsGlobalVariable.LargeFileInFvFlags.append(False)
         FFSGuid = None
-
+        
         if self.FvBaseAddress is not None:
             BaseAddress = self.FvBaseAddress
         if not Flag:
@@ -139,7 +139,7 @@ class FV (FvClassObject):
             FvOutputFile = self.CreateFileName
 
         if Flag:
-            GenFdsGlobalVariable.ImageBinDict[self.UiFvName.upper() + 'fv'] = FvOutputFile
+            GenFds.ImageBinDict[self.UiFvName.upper() + 'fv'] = FvOutputFile
             return FvOutputFile
 
         FvInfoFileName = os.path.join(GenFdsGlobalVariable.FfsDir, self.UiFvName + '.inf')
@@ -219,7 +219,7 @@ class FV (FvClassObject):
                     # FvAlignmentValue is less than 1K
                     self.FvAlignment = str (FvAlignmentValue)
                 FvFileObj.close()
-                GenFdsGlobalVariable.ImageBinDict[self.UiFvName.upper() + 'fv'] = FvOutputFile
+                GenFds.ImageBinDict[self.UiFvName.upper() + 'fv'] = FvOutputFile
                 GenFdsGlobalVariable.LargeFileInFvFlags.pop()
             else:
                 GenFdsGlobalVariable.ErrorLogger("Failed to generate %s FV file." %self.UiFvName)
@@ -289,7 +289,7 @@ class FV (FvClassObject):
                 if not self._GetBlockSize():
                     #set default block size is 1
                     self.FvInfFile.writelines("EFI_BLOCK_SIZE  = 0x1" + TAB_LINE_BREAK)
-
+            
             for BlockSize in self.BlockSizeList :
                 if BlockSize[0] is not None:
                     self.FvInfFile.writelines("EFI_BLOCK_SIZE  = "  + \
@@ -331,7 +331,7 @@ class FV (FvClassObject):
                                        self.FvAlignment.strip() + \
                                        " = TRUE"                + \
                                        TAB_LINE_BREAK)
-
+                                       
         #
         # Generate FV extension header file
         #
@@ -387,7 +387,7 @@ class FV (FvClassObject):
                     TotalSize += (Size + 4)
                     FvExtFile.seek(0)
                     Buffer += pack('HH', (Size + 4), int(self.FvExtEntryTypeValue[Index], 16))
-                    Buffer += FvExtFile.read()
+                    Buffer += FvExtFile.read() 
                     FvExtFile.close()
                 if self.FvExtEntryType[Index] == 'DATA':
                     ByteList = self.FvExtEntryData[Index].split(',')
@@ -418,7 +418,7 @@ class FV (FvClassObject):
                                            FvExtHeaderFileName                  + \
                                            TAB_LINE_BREAK)
 
-
+         
         #
         # Add [Files]
         #

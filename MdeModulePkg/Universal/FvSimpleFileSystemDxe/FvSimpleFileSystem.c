@@ -704,7 +704,6 @@ FvSimpleFileSystemRead (
 
     Status = FvFsReadFile (File->Instance->FvProtocol, File->FvFileInfo, &FileSize, &FileBuffer);
     if (EFI_ERROR (Status)) {
-      FreePool (FileBuffer);
       return EFI_DEVICE_ERROR;
     }
 
@@ -714,8 +713,6 @@ FvSimpleFileSystemRead (
 
     CopyMem (Buffer, (UINT8*)FileBuffer + File->Position, *BufferSize);
     File->Position += *BufferSize;
-
-    FreePool (FileBuffer);
 
     return EFI_SUCCESS;
   }

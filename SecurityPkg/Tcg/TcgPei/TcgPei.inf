@@ -56,7 +56,6 @@
   MemoryAllocationLib
   ReportStatusCodeLib
   Tpm12CommandLib
-  PerformanceLib
 
 [Guids]
   gTcgEventEntryHobGuid                                               ## PRODUCES               ## HOB

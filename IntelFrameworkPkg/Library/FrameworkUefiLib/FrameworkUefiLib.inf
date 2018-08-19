@@ -61,7 +61,6 @@
   gEfiSimpleTextOutProtocolGuid                 ## SOMETIMES_CONSUMES
   gEfiGraphicsOutputProtocolGuid                ## SOMETIMES_CONSUMES
   gEfiHiiFontProtocolGuid                       ## SOMETIMES_CONSUMES
-  gEfiSimpleFileSystemProtocolGuid              ## SOMETIMES_CONSUMES
   gEfiComponentNameProtocolGuid                 ## SOMETIMES_PRODUCES
   gEfiComponentName2ProtocolGuid                ## SOMETIMES_PRODUCES
   gEfiDriverConfigurationProtocolGuid           ## SOMETIMES_PRODUCES

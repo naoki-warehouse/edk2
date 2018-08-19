@@ -66,6 +66,9 @@ ACPI_CPU_DATA                mAcpiCpuData;
 volatile UINT32              mNumberToFinish;
 MP_CPU_EXCHANGE_INFO         *mExchangeInfo;
 BOOLEAN                      mRestoreSmmConfigurationInS3 = FALSE;
+VOID                         *mGdtForAp = NULL;
+VOID                         *mIdtForAp = NULL;
+VOID                         *mMachineCheckHandlerForAp = NULL;
 MP_MSR_LOCK                  *mMsrSpinLocks = NULL;
 UINTN                        mMsrSpinLockCount;
 UINTN                        mMsrCount = 0;
@@ -445,6 +448,13 @@ PrepareApStartupVector (
   CopyMem ((VOID *) (UINTN) &mExchangeInfo->GdtrProfile, (VOID *) (UINTN) mAcpiCpuData.GdtrProfile, sizeof (IA32_DESCRIPTOR));
   CopyMem ((VOID *) (UINTN) &mExchangeInfo->IdtrProfile, (VOID *) (UINTN) mAcpiCpuData.IdtrProfile, sizeof (IA32_DESCRIPTOR));
 
+  //
+  // Copy AP's GDT, IDT and Machine Check handler from SMRAM to ACPI NVS memory
+  //
+  CopyMem ((VOID *) mExchangeInfo->GdtrProfile.Base, mGdtForAp, mExchangeInfo->GdtrProfile.Limit + 1);
+  CopyMem ((VOID *) mExchangeInfo->IdtrProfile.Base, mIdtForAp, mExchangeInfo->IdtrProfile.Limit + 1);
+  CopyMem ((VOID *)(UINTN) mAcpiCpuData.ApMachineCheckHandlerBase, mMachineCheckHandlerForAp, mAcpiCpuData.ApMachineCheckHandlerSize);
+
   mExchangeInfo->StackStart  = (VOID *) (UINTN) mAcpiCpuData.StackAddress;
   mExchangeInfo->StackSize   = mAcpiCpuData.StackSize;
   mExchangeInfo->BufferStart = (UINT32) StartupVector;
@@ -821,9 +831,6 @@ GetAcpiCpuData (
   ACPI_CPU_DATA              *AcpiCpuData;
   IA32_DESCRIPTOR            *Gdtr;
   IA32_DESCRIPTOR            *Idtr;
-  VOID                       *GdtForAp;
-  VOID                       *IdtForAp;
-  VOID                       *MachineCheckHandlerForAp;
 
   if (!mAcpiS3Enable) {
     return;
@@ -886,18 +893,14 @@ GetAcpiCpuData (
   Gdtr = (IA32_DESCRIPTOR *)(UINTN)mAcpiCpuData.GdtrProfile;
   Idtr = (IA32_DESCRIPTOR *)(UINTN)mAcpiCpuData.IdtrProfile;
 
-  GdtForAp = AllocatePool ((Gdtr->Limit + 1) + (Idtr->Limit + 1) +  mAcpiCpuData.ApMachineCheckHandlerSize);
-  ASSERT (GdtForAp != NULL);
-  IdtForAp = (VOID *) ((UINTN)GdtForAp + (Gdtr->Limit + 1));
-  MachineCheckHandlerForAp = (VOID *) ((UINTN)IdtForAp + (Idtr->Limit + 1));
+  mGdtForAp = AllocatePool ((Gdtr->Limit + 1) + (Idtr->Limit + 1) +  mAcpiCpuData.ApMachineCheckHandlerSize);
+  ASSERT (mGdtForAp != NULL);
+  mIdtForAp = (VOID *) ((UINTN)mGdtForAp + (Gdtr->Limit + 1));
+  mMachineCheckHandlerForAp = (VOID *) ((UINTN)mIdtForAp + (Idtr->Limit + 1));
 
-  CopyMem (GdtForAp, (VOID *)Gdtr->Base, Gdtr->Limit + 1);
-  CopyMem (IdtForAp, (VOID *)Idtr->Base, Idtr->Limit + 1);
-  CopyMem (MachineCheckHandlerForAp, (VOID *)(UINTN)mAcpiCpuData.ApMachineCheckHandlerBase, mAcpiCpuData.ApMachineCheckHandlerSize);
-
-  Gdtr->Base = (UINTN)GdtForAp;
-  Idtr->Base = (UINTN)IdtForAp;
-  mAcpiCpuData.ApMachineCheckHandlerBase = (EFI_PHYSICAL_ADDRESS)(UINTN)MachineCheckHandlerForAp;
+  CopyMem (mGdtForAp, (VOID *)Gdtr->Base, Gdtr->Limit + 1);
+  CopyMem (mIdtForAp, (VOID *)Idtr->Base, Idtr->Limit + 1);
+  CopyMem (mMachineCheckHandlerForAp, (VOID *)(UINTN)mAcpiCpuData.ApMachineCheckHandlerBase, mAcpiCpuData.ApMachineCheckHandlerSize);
 }
 
 /**

@@ -79,7 +79,6 @@
   DebugLib
   DebugAgentLib
   PeiServicesTablePointerLib
-  PerformanceLib
 
 [LibraryClasses.ARM, LibraryClasses.AARCH64]
   ArmMmuLib

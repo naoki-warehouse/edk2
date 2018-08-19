@@ -31,7 +31,6 @@ WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/DebugLib.h>
 #include <Library/MtrrLib.h>
-#include <Library/MemoryAllocationLib.h>
 
 #include <Protocol/MpService.h>
 #include <Guid/EventGroup.h>
@@ -47,7 +46,9 @@ typedef struct {
 } ACPI_CPU_DATA_EX;
 
 /**
-  Allocate EfiACPIMemoryNVS memory.
+  Allocate EfiACPIMemoryNVS below 4G memory address.
+
+  This function allocates EfiACPIMemoryNVS below 4G memory address.
 
   @param[in] Size   Size of memory to allocate.
 
@@ -55,7 +56,7 @@ typedef struct {
 
 **/
 VOID *
-AllocateAcpiNvsMemory (
+AllocateAcpiNvsMemoryBelow4G (
   IN UINTN  Size
   )
 {
@@ -63,8 +64,9 @@ AllocateAcpiNvsMemory (
   EFI_STATUS            Status;
   VOID                  *Buffer;
 
+  Address = BASE_4GB - 1;
   Status  = gBS->AllocatePages (
-                   AllocateAnyPages,
+                   AllocateMaxAddress,
                    EfiACPIMemoryNVS,
                    EFI_SIZE_TO_PAGES (Size),
                    &Address
@@ -79,28 +81,6 @@ AllocateAcpiNvsMemory (
   return Buffer;
 }
 
-/**
-  Allocate memory and clean it with zero.
-
-  @param[in] Size   Size of memory to allocate.
-
-  @return       Allocated address for output.
-
-**/
-VOID *
-AllocateZeroPages (
-  IN UINTN  Size
-  )
-{
-  VOID                  *Buffer;
-
-  Buffer = AllocatePages (EFI_SIZE_TO_PAGES (Size));
-  if (Buffer != NULL) {
-    ZeroMem (Buffer, Size);
-  }
-
-  return Buffer;
-}
 /**
   Callback function executed when the EndOfDxe event group is signaled.
 
@@ -191,7 +171,10 @@ CpuS3DataInitialize (
   //
   OldAcpiCpuData = (ACPI_CPU_DATA *) (UINTN) PcdGet64 (PcdCpuS3DataAddress);
 
-  AcpiCpuDataEx = AllocateZeroPages (sizeof (ACPI_CPU_DATA_EX));
+  //
+  // Allocate ACPI NVS memory below 4G memory for use on ACPI S3 resume.
+  //
+  AcpiCpuDataEx = AllocateAcpiNvsMemoryBelow4G (sizeof (ACPI_CPU_DATA_EX));
   ASSERT (AcpiCpuDataEx != NULL);
   AcpiCpuData = &AcpiCpuDataEx->AcpiCpuData;
 
@@ -227,13 +210,9 @@ CpuS3DataInitialize (
   AcpiCpuData->MtrrTable    = (EFI_PHYSICAL_ADDRESS)(UINTN)&AcpiCpuDataEx->MtrrTable;
 
   //
-  // Allocate stack space for all CPUs.
-  // Use ACPI NVS memory type because this data will be directly used by APs
-  // in S3 resume phase in long mode. Also during S3 resume, the stack buffer
-  // will only be used as scratch space. i.e. we won't read anything from it
-  // before we write to it, in PiSmmCpuDxeSmm.
+  // Allocate stack space for all CPUs
   //
-  Stack = AllocateAcpiNvsMemory (NumberOfCpus * AcpiCpuData->StackSize);
+  Stack = AllocateAcpiNvsMemoryBelow4G (NumberOfCpus * AcpiCpuData->StackSize);
   ASSERT (Stack != NULL);
   AcpiCpuData->StackAddress = (EFI_PHYSICAL_ADDRESS)(UINTN)Stack;
 
@@ -244,11 +223,11 @@ CpuS3DataInitialize (
   AsmReadIdtr (&AcpiCpuDataEx->IdtrProfile);
 
   //
-  // Allocate GDT and IDT and copy current GDT and IDT contents
+  // Allocate GDT and IDT in ACPI NVS and copy current GDT and IDT contents
   //
   GdtSize = AcpiCpuDataEx->GdtrProfile.Limit + 1;
   IdtSize = AcpiCpuDataEx->IdtrProfile.Limit + 1;
-  Gdt = AllocateZeroPages (GdtSize + IdtSize);
+  Gdt = AllocateAcpiNvsMemoryBelow4G (GdtSize + IdtSize);
   ASSERT (Gdt != NULL);
   Idt = (VOID *)((UINTN)Gdt + GdtSize);
   CopyMem (Gdt, (VOID *)AcpiCpuDataEx->GdtrProfile.Base, GdtSize);
@@ -264,7 +243,7 @@ CpuS3DataInitialize (
     // Allocate buffer for empty RegisterTable and PreSmmInitRegisterTable for all CPUs
     //
     TableSize = 2 * NumberOfCpus * sizeof (CPU_REGISTER_TABLE);
-    RegisterTable = (CPU_REGISTER_TABLE *)AllocateZeroPages (TableSize);
+    RegisterTable = (CPU_REGISTER_TABLE *)AllocateAcpiNvsMemoryBelow4G (TableSize);
     ASSERT (RegisterTable != NULL);
 
     for (Index = 0; Index < NumberOfCpus; Index++) {

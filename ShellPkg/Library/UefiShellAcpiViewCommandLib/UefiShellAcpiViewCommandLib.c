@@ -66,7 +66,6 @@ RegisterAllParsers (
   EFI_STATUS Status;
   UINTN Count;
 
-  Status = EFI_SUCCESS;
   Count = sizeof (ParserList) / sizeof (ParserList[0]);
 
   while (Count-- != 0) {
@@ -118,7 +117,7 @@ UefiShellAcpiViewCommandLibConstructor (
   gShellAcpiViewHiiHandle = NULL;
 
   // Check Shell Profile Debug1 bit of the profiles mask
-  if ((PcdGet8 (PcdShellProfileMask) & BIT1) == 0) {
+  if ((FixedPcdGet8 (PcdShellProfileMask) & BIT1) == 0) {
     return EFI_SUCCESS;
   }
 

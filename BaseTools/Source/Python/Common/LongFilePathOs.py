@@ -11,9 +11,8 @@
 # WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 #
 
-from __future__ import absolute_import
 import os
-from . import LongFilePathOsPath
+import LongFilePathOsPath
 from Common.LongFilePathSupport import LongFilePath
 from Common.LongFilePathSupport import UniToStr
 import time

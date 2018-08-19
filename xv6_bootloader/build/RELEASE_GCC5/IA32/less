@@ -1,0 +1,16 @@
+ 2541* cd edk2
+ 2542* ks
+ 2544* cd Conf
+ 2546* v target.txt
+ 2549  nano xv6_bootloader.dec
+ 2550  v xv6_bootloader.dsc
+ 2551* build -a IA32
+ 2552  cd image
+ 2554  cd ../
+ 2556  cd build
+ 2558  cd RELEASE_GCC5
+ 2560  cd IA32
+ 2561  ls
+ 2562  history
+ 2563  ls -;
+ 2564  ls > less

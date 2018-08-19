@@ -15,12 +15,11 @@
 ##
 # Import Modules
 #
-from __future__ import absolute_import
 from struct import *
-from . import Section
-from .GenFdsGlobalVariable import GenFdsGlobalVariable
+import Section
+from GenFdsGlobalVariable import GenFdsGlobalVariable
 import subprocess
-from .Ffs import Ffs
+from Ffs import Ffs
 import Common.LongFilePathOs as os
 from CommonDataClass.FdfClass import EfiSectionClassObject
 from Common import EdkLogger
@@ -56,7 +55,7 @@ class EfiSection (EfiSectionClassObject):
     #   @retval tuple       (Generated file name list, section alignment)
     #
     def GenSection(self, OutputPath, ModuleName, SecNum, KeyStringList, FfsInf = None, Dict = {}, IsMakefile = False) :
-
+        
         if self.FileName is not None and self.FileName.startswith('PCD('):
             self.FileName = GenFdsGlobalVariable.GetPcdValue(self.FileName)
         """Prepare the parameter of GenSection"""
@@ -156,7 +155,7 @@ class EfiSection (EfiSectionClassObject):
                     BuildNumTuple = tuple()
                 BuildNumString = ' ' + ' '.join(BuildNumTuple)
 
-                #if VerString == '' and
+                #if VerString == '' and 
                 if BuildNumString == '':
                     if self.Optional == True :
                         GenFdsGlobalVariable.VerboseLogger( "Optional Section don't exist!")
@@ -241,7 +240,7 @@ class EfiSection (EfiSectionClassObject):
                     Num = '%s.%d' %(SecNum, Index)
                     OutputFile = os.path.join( OutputPath, ModuleName + SUP_MODULE_SEC + Num + Ffs.SectionSuffix.get(SectionType))
                     File = GenFdsGlobalVariable.MacroExtend(File, Dict)
-
+                    
                     #Get PE Section alignment when align is set to AUTO
                     if self.Alignment == 'Auto' and (SectionType == BINARY_FILE_TYPE_PE32 or SectionType == BINARY_FILE_TYPE_TE):
                         ImageObj = PeImageClass (File)
@@ -285,7 +284,7 @@ class EfiSection (EfiSectionClassObject):
                                 IsMakefile = IsMakefile
                             )
                         File = StrippedFile
-
+                    
                     """For TE Section call GenFw to generate TE image"""
 
                     if SectionType == BINARY_FILE_TYPE_TE:

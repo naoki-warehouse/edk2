@@ -14,15 +14,14 @@
 ##
 # Import Modules
 #
-from __future__ import absolute_import
 import re
-from . import DataType
+import DataType
 import Common.LongFilePathOs as os
 import string
-from . import EdkLogger as EdkLogger
+import EdkLogger as EdkLogger
 
-from . import GlobalData
-from .BuildToolError import *
+import GlobalData
+from BuildToolError import *
 from CommonDataClass.Exceptions import *
 from Common.LongFilePathSupport import OpenLongFilePath as open
 from Common.MultipleWorkspace import MultipleWorkspace as mws
@@ -840,7 +839,7 @@ def StringToArray(String):
             return "{%s,0x00}" % ",".join(C.strip() for C in String[1:-1].split(','))
         else:
             return "{%s}" % ",".join(C.strip() for C in String[1:-1].split(','))
-
+        
     else:
         if len(String.split()) % 2:
             return '{%s,0}' % ','.join(String.split())

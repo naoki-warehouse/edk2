@@ -1,7 +1,7 @@
 ## @file
 # This file implements the log mechanism for Python tools.
 #
-# Copyright (c) 2007 - 2018, Intel Corporation. All rights reserved.<BR>
+# Copyright (c) 2007 - 2015, Intel Corporation. All rights reserved.<BR>
 # This program and the accompanying materials
 # are licensed and made available under the terms and conditions of the BSD License
 # which accompanies this distribution.  The full text of the license may be found at
@@ -12,10 +12,9 @@
 #
 
 ## Import modules
-from __future__ import absolute_import
 import Common.LongFilePathOs as os, sys, logging
 import traceback
-from  .BuildToolError import *
+from  BuildToolError import *
 
 ## Log level constants
 DEBUG_0 = 1
@@ -198,7 +197,6 @@ def error(ToolName, ErrorCode, Message=None, File=None, Line=None, ExtraData=Non
         LogText = _ErrorMessageTemplateWithoutFile % TemplateDict
 
     _ErrorLogger.log(ERROR, LogText)
-    RaiseError = IsRaiseError
     if RaiseError:
         raise FatalError(ErrorCode)
 

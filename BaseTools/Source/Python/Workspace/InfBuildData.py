@@ -12,12 +12,11 @@
 # WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 #
 
-from __future__ import absolute_import
 from Common.StringUtils import *
 from Common.DataType import *
 from Common.Misc import *
 from types import *
-from .MetaFileParser import *
+from MetaFileParser import *
 from collections import OrderedDict
 
 from Workspace.BuildClassObject import ModuleBuildClassObject, LibraryClassObject, PcdClassObject
@@ -912,22 +911,12 @@ class InfBuildData(ModuleBuildClassObject):
                                             ExtraData=Token, File=self.MetaFile, Line=Record[-1])
                         DepexList.append(Module.Guid)
                     else:
-                        # it use the Fixed PCD format
-                        if '.' in Token:
-                            if tuple(Token.split('.')[::-1]) not in self.Pcds:
-                                EdkLogger.error('build', RESOURCE_NOT_AVAILABLE, "PCD [{}] used in [Depex] section should be listed in module PCD section".format(Token), File=self.MetaFile, Line=Record[-1])
-                            else:
-                                if self.Pcds[tuple(Token.split('.')[::-1])].DatumType != TAB_VOID:
-                                    EdkLogger.error('build', FORMAT_INVALID, "PCD [{}] used in [Depex] section should be VOID* datum type".format(Token), File=self.MetaFile, Line=Record[-1])
-                            Value = Token
-                        else:
-                            # get the GUID value now
-                            Value = ProtocolValue(Token, self.Packages, self.MetaFile.Path)
+                        # get the GUID value now
+                        Value = ProtocolValue(Token, self.Packages, self.MetaFile.Path)
+                        if Value is None:
+                            Value = PpiValue(Token, self.Packages, self.MetaFile.Path)
                             if Value is None:
-                                Value = PpiValue(Token, self.Packages, self.MetaFile.Path)
-                                if Value is None:
-                                    Value = GuidValue(Token, self.Packages, self.MetaFile.Path)
-
+                                Value = GuidValue(Token, self.Packages, self.MetaFile.Path)
                         if Value is None:
                             PackageList = "\n\t".join(str(P) for P in self.Packages)
                             EdkLogger.error('build', RESOURCE_NOT_AVAILABLE,

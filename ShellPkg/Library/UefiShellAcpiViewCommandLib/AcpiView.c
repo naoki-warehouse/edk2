@@ -284,7 +284,6 @@ ConvertStrToAcpiSignature (
   UINT8 Index;
   CHAR8 Ptr[4];
 
-  ZeroMem (Ptr, sizeof (Ptr));
   Index = 0;
 
   // Convert to Upper case and convert to ASCII

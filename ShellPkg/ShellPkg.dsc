@@ -2,7 +2,6 @@
 # Shell Package
 #
 # Copyright (c) 2007 - 2018, Intel Corporation. All rights reserved.<BR>
-# Copyright (c) 2018, Arm Limited. All rights reserved.<BR>
 #
 #    This program and the accompanying materials
 #    are licensed and made available under the terms and conditions of the BSD License
@@ -91,7 +90,6 @@
   # This helps developers test changes and how they affect the package.
   #
   ShellPkg/Library/UefiShellLib/UefiShellLib.inf
-  ShellPkg/Library/UefiShellAcpiViewCommandLib/UefiShellAcpiViewCommandLib.inf
   ShellPkg/Library/UefiShellCommandLib/UefiShellCommandLib.inf
   ShellPkg/Library/UefiShellCEntryLib/UefiShellCEntryLib.inf
   ShellPkg/Library/UefiHandleParsingLib/UefiHandleParsingLib.inf
@@ -129,8 +127,13 @@
   ShellPkg/DynamicCommand/DpDynamicCommand/DpDynamicCommand.inf {
     <PcdsFixedAtBuild>
       gEfiShellPkgTokenSpaceGuid.PcdShellLibAutoInitialize|FALSE
+    <LibraryClasses>
+      PerformanceLib|MdeModulePkg/Library/DxeSmmPerformanceLib/DxeSmmPerformanceLib.inf
   }
-  ShellPkg/DynamicCommand/DpDynamicCommand/DpApp.inf
+  ShellPkg/DynamicCommand/DpDynamicCommand/DpApp.inf {
+    <LibraryClasses>
+      PerformanceLib|MdeModulePkg/Library/DxeSmmPerformanceLib/DxeSmmPerformanceLib.inf
+  }
 
 [BuildOptions]
   *_*_*_CC_FLAGS = -D DISABLE_NEW_DEPRECATED_INTERFACES

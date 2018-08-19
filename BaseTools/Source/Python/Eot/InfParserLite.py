@@ -15,15 +15,14 @@
 # Import Modules
 #
 from __future__ import print_function
-from __future__ import absolute_import
 import Common.LongFilePathOs as os
 import Common.EdkLogger as EdkLogger
 from Common.DataType import *
 from CommonDataClass.DataClass import *
 from Common.Identification import *
 from Common.StringUtils import *
-from .Parser import *
-from . import Database
+from Parser import *
+import Database
 
 ## EdkInfParser() class
 #

@@ -10,15 +10,14 @@
 # THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
 # WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 #
-from __future__ import absolute_import
 import Common.LongFilePathOs as os
 import re
 from CommonDataClass.DataClass import *
 import Common.DataType as DT
-from Ecc.EccToolError import *
-from Ecc.MetaDataParser import ParseHeaderCommentSection
-from Ecc import EccGlobalData
-from Ecc import c
+from EccToolError import *
+from MetaDataParser import ParseHeaderCommentSection
+import EccGlobalData
+import c
 from Common.LongFilePathSupport import OpenLongFilePath as open
 from Common.MultipleWorkspace import MultipleWorkspace as mws
 
@@ -188,60 +187,6 @@ class Check(object):
     def GeneralCheck(self):
         self.GeneralCheckNonAcsii()
         self.UniCheck()
-        self.GeneralCheckNoTab()
-        self.GeneralCheckLineEnding()
-        self.GeneralCheckTrailingWhiteSpaceLine()
-
-    # Check whether NO Tab is used, replaced with spaces
-    def GeneralCheckNoTab(self):
-        if EccGlobalData.gConfig.GeneralCheckNoTab == '1' or EccGlobalData.gConfig.GeneralCheckAll == '1' or EccGlobalData.gConfig.CheckAll == '1':
-            EdkLogger.quiet("Checking No TAB used in file ...")
-            SqlCommand = """select ID, FullPath, ExtName from File where ExtName in ('.dec', '.inf', '.dsc', 'c', 'h')"""
-            RecordSet = EccGlobalData.gDb.TblFile.Exec(SqlCommand)
-            for Record in RecordSet:
-                if Record[2].upper() not in EccGlobalData.gConfig.BinaryExtList:
-                    op = open(Record[1]).readlines()
-                    IndexOfLine = 0
-                    for Line in op:
-                        IndexOfLine += 1
-                        IndexOfChar = 0
-                        for Char in Line:
-                            IndexOfChar += 1
-                            if Char == '\t':
-                                OtherMsg = "File %s has TAB char at line %s column %s" % (Record[1], IndexOfLine, IndexOfChar)
-                                EccGlobalData.gDb.TblReport.Insert(ERROR_GENERAL_CHECK_NO_TAB, OtherMsg=OtherMsg, BelongsToTable='File', BelongsToItem=Record[0])
-
-    # Check Only use CRLF (Carriage Return Line Feed) line endings.
-    def GeneralCheckLineEnding(self):
-        if EccGlobalData.gConfig.GeneralCheckLineEnding == '1' or EccGlobalData.gConfig.GeneralCheckAll == '1' or EccGlobalData.gConfig.CheckAll == '1':
-            EdkLogger.quiet("Checking line ending in file ...")
-            SqlCommand = """select ID, FullPath, ExtName from File where ExtName in ('.dec', '.inf', '.dsc', 'c', 'h')"""
-            RecordSet = EccGlobalData.gDb.TblFile.Exec(SqlCommand)
-            for Record in RecordSet:
-                if Record[2].upper() not in EccGlobalData.gConfig.BinaryExtList:
-                    op = open(Record[1], 'rb').readlines()
-                    IndexOfLine = 0
-                    for Line in op:
-                        IndexOfLine += 1
-                        if not Line.endswith('\r\n'):
-                            OtherMsg = "File %s has invalid line ending at line %s" % (Record[1], IndexOfLine)
-                            EccGlobalData.gDb.TblReport.Insert(ERROR_GENERAL_CHECK_INVALID_LINE_ENDING, OtherMsg=OtherMsg, BelongsToTable='File', BelongsToItem=Record[0])
-
-    # Check if there is no trailing white space in one line.
-    def GeneralCheckTrailingWhiteSpaceLine(self):
-        if EccGlobalData.gConfig.GeneralCheckTrailingWhiteSpaceLine == '1' or EccGlobalData.gConfig.GeneralCheckAll == '1' or EccGlobalData.gConfig.CheckAll == '1':
-            EdkLogger.quiet("Checking trailing white space line in file ...")
-            SqlCommand = """select ID, FullPath, ExtName from File where ExtName in ('.dec', '.inf', '.dsc', 'c', 'h')"""
-            RecordSet = EccGlobalData.gDb.TblFile.Exec(SqlCommand)
-            for Record in RecordSet:
-                if Record[2].upper() not in EccGlobalData.gConfig.BinaryExtList:
-                    op = open(Record[1], 'rb').readlines()
-                    IndexOfLine = 0
-                    for Line in op:
-                        IndexOfLine += 1
-                        if Line.replace('\r', '').replace('\n', '').endswith(' '):
-                            OtherMsg = "File %s has trailing white spaces at line %s" % (Record[1], IndexOfLine)
-                            EccGlobalData.gDb.TblReport.Insert(ERROR_GENERAL_CHECK_TRAILING_WHITE_SPACE_LINE, OtherMsg=OtherMsg, BelongsToTable='File', BelongsToItem=Record[0])
 
     # Check whether file has non ACSII char
     def GeneralCheckNonAcsii(self):
@@ -618,17 +563,17 @@ class Check(object):
                         op = open(FullName).readlines()
                         FileLinesList = op
                         LineNo             = 0
-                        CurrentSection     = MODEL_UNKNOWN
+                        CurrentSection     = MODEL_UNKNOWN 
                         HeaderSectionLines       = []
-                        HeaderCommentStart = False
+                        HeaderCommentStart = False 
                         HeaderCommentEnd   = False
-
+                        
                         for Line in FileLinesList:
                             LineNo   = LineNo + 1
                             Line     = Line.strip()
                             if (LineNo < len(FileLinesList) - 1):
                                 NextLine = FileLinesList[LineNo].strip()
-
+            
                             #
                             # blank line
                             #
@@ -655,8 +600,8 @@ class Check(object):
                                     #
                                     HeaderSectionLines.append((Line, LineNo))
                                     HeaderCommentStart = True
-                                    continue
-
+                                    continue        
+            
                             #
                             # Collect Header content.
                             #
@@ -690,7 +635,7 @@ class Check(object):
                                 if EccGlobalData.gConfig.HeaderCheckFileCommentEnd == '1' or EccGlobalData.gConfig.HeaderCheckAll == '1' or EccGlobalData.gConfig.CheckAll == '1':
                                     EccGlobalData.gDb.TblReport.Insert(ERROR_DOXYGEN_CHECK_FILE_HEADER, Msg, "File", Result[0])
 
-
+                                     
 
     # Check whether the function headers are followed Doxygen special documentation blocks in section 2.3.5
     def DoxygenCheckFunctionHeader(self):
@@ -882,7 +827,7 @@ class Check(object):
                     for FilePath in FilePathList:
                         if not EccGlobalData.gException.IsException(ERROR_META_DATA_FILE_CHECK_LIBRARY_NAME_DUPLICATE, Record[1]):
                             EccGlobalData.gDb.TblReport.Insert(ERROR_META_DATA_FILE_CHECK_LIBRARY_NAME_DUPLICATE, OtherMsg="The Library Class [%s] is duplicated in '%s' line %s and line %s." % (Record[1], FilePath, Record[3], Record[4]), BelongsToTable='Dsc', BelongsToItem=Record[0])
-
+    
     # Check the header file in Include\Library directory whether be defined in the package DEC file.
     def MetaDataFileCheckLibraryDefinedInDec(self):
         if EccGlobalData.gConfig.MetaDataFileCheckLibraryDefinedInDec == '1' or EccGlobalData.gConfig.MetaDataFileCheckAll == '1' or EccGlobalData.gConfig.CheckAll == '1':
@@ -897,9 +842,9 @@ class Check(object):
                 if not LibraryDec:
                     if not EccGlobalData.gException.IsException(ERROR_META_DATA_FILE_CHECK_LIBRARY_NOT_DEFINED, LibraryInInf):
                         EccGlobalData.gDb.TblReport.Insert(ERROR_META_DATA_FILE_CHECK_LIBRARY_NOT_DEFINED, \
-                                            OtherMsg="The Library Class [%s] in %s line is not defined in the associated package file." % (LibraryInInf, Line),
+                                            OtherMsg="The Library Class [%s] in %s line is not defined in the associated package file." % (LibraryInInf, Line), 
                                             BelongsToTable='Inf', BelongsToItem=ID)
-
+    
     # Check whether an Inf file is specified in the FDF file, but not in the Dsc file, then the Inf file must be for a Binary module only
     def MetaDataFileCheckBinaryInfInFdf(self):
         if EccGlobalData.gConfig.MetaDataFileCheckBinaryInfInFdf == '1' or EccGlobalData.gConfig.MetaDataFileCheckAll == '1' or EccGlobalData.gConfig.CheckAll == '1':
@@ -1299,7 +1244,7 @@ class Check(object):
                      group by A.ID
                      """ % (Table.Table, Table.Table, Model, Model)
         RecordSet = Table.Exec(SqlCommand)
-        for Record in RecordSet:
+        for Record in RecordSet:     
             if not EccGlobalData.gException.IsException(ErrorID, Record[2]):
                 EccGlobalData.gDb.TblReport.Insert(ErrorID, OtherMsg="The %s value [%s] is used more than one time" % (Name.upper(), Record[2]), BelongsToTable=Table.Table, BelongsToItem=Record[0])
 

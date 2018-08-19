@@ -114,6 +114,7 @@
 [Protocols]
   gEfiHiiConfigAccessProtocolGuid               ## PRODUCES
   gEfiDevicePathProtocolGuid                    ## PRODUCES
+  gEfiSimpleFileSystemProtocolGuid              ## SOMETIMES_CONSUMES
   gEfiBlockIoProtocolGuid                       ## SOMETIMES_CONSUMES
 
 [Depex]

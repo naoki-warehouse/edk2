@@ -788,15 +788,7 @@ OpalUtilUpdateGlobalLockingRange(
 
 done:
   if (MethodStatus != TCG_METHOD_STATUS_CODE_SUCCESS) {
-    if (MethodStatus == TCG_METHOD_STATUS_CODE_AUTHORITY_LOCKED_OUT) {
-      //
-      // Caller need to know this special error, but return status not has type for it.
-      // so here use TcgResultFailureInvalidType as an replacement.
-      //
-      Ret = TcgResultFailureInvalidType;
-    } else {
-      Ret = TcgResultFailure;
-    }
+    Ret = TcgResultFailure;
   }
   return Ret;
 }

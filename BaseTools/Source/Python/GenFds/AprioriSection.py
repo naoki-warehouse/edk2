@@ -15,12 +15,11 @@
 ##
 # Import Modules
 #
-from __future__ import absolute_import
 from struct import *
 import Common.LongFilePathOs as os
 from io import BytesIO
-from . import FfsFileStatement
-from .GenFdsGlobalVariable import GenFdsGlobalVariable
+import FfsFileStatement
+from GenFdsGlobalVariable import GenFdsGlobalVariable
 from CommonDataClass.FdfClass import AprioriSectionClassObject
 from Common.StringUtils import *
 from Common.Misc import SaveFileOnChange, PathClass

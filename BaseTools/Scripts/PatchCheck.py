@@ -1,7 +1,7 @@
 ## @file
 #  Check a patch for various format issues
 #
-#  Copyright (c) 2015 - 2018, Intel Corporation. All rights reserved.<BR>
+#  Copyright (c) 2015 - 2017, Intel Corporation. All rights reserved.<BR>
 #
 #  This program and the accompanying materials are licensed and made
 #  available under the terms and conditions of the BSD License which
@@ -528,8 +528,6 @@ class CheckGitCommits:
                 print('Checking git commit:', commit)
             patch = self.read_patch_from_git(commit)
             self.ok &= CheckOnePatch(commit, patch).ok
-        if not commits:
-            print("Couldn't find commit matching: '{}'".format(rev_spec))
 
     def read_commit_list_from_git(self, rev_spec, max_count):
         # Run git to get the commit patch
@@ -538,7 +536,7 @@ class CheckGitCommits:
             cmd.append('--max-count=' + str(max_count))
         cmd.append(rev_spec)
         out = self.run_git(*cmd)
-        return out.split() if out else []
+        return out.split()
 
     def read_patch_from_git(self, commit):
         # Run git to get the commit patch
@@ -550,8 +548,7 @@ class CheckGitCommits:
         p = subprocess.Popen(cmd,
                      stdout=subprocess.PIPE,
                      stderr=subprocess.STDOUT)
-        Result = p.communicate()
-        return Result[0].decode('utf-8', 'ignore') if Result[0] and Result[0].find("fatal")!=0 else None
+        return p.communicate()[0].decode('utf-8', 'ignore')
 
 class CheckOnePatchFile:
     """Performs a patch check for a single file.

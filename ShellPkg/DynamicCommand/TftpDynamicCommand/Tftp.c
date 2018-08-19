@@ -519,8 +519,6 @@ RunTftp (
       goto NextHandle;
     }
 
-    DataSize = FileSize;
-
     if (!EFI_ERROR (ShellFileExists (LocalFilePath))) {
       ShellDeleteFileByName (LocalFilePath);
     }
@@ -541,6 +539,7 @@ RunTftp (
       goto NextHandle;
     }
 
+    DataSize = FileSize;
     Status = ShellWriteFile (FileHandle, &FileSize, Data);
     if (!EFI_ERROR (Status)) {
       ShellStatus = SHELL_SUCCESS;

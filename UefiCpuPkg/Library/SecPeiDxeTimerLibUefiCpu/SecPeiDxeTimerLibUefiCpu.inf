@@ -39,7 +39,7 @@
 #  VALID_ARCHITECTURES           = IA32 X64
 #
 
-[Sources]
+[Sources.Ia32, Sources.X64]
   X86TimerLib.c
 
 [Packages]
@@ -49,11 +49,11 @@
 [LibraryClasses]
   BaseLib
 
-[LibraryClasses]
+[LibraryClasses.IA32, LibraryClasses.X64]
   PcdLib
   DebugLib
   LocalApicLib
 
-[Pcd]
+[Pcd.IA32, Pcd.X64]
   gEfiMdePkgTokenSpaceGuid.PcdFSBClock  ## SOMETIMES_CONSUMES
 

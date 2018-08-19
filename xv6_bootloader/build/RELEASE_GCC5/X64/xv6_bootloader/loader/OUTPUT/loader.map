@@ -1,0 +1,484 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(SetMem.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(ScanMem64Wrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(ScanMem32Wrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(ScanMem16Wrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(ScanMem8Wrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(ZeroMemWrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(CompareMemWrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(SetMem64Wrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(SetMem32Wrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(SetMem16Wrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(SetMemWrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(CopyMemWrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(IsZeroBufferWrapper.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(MemLibGeneric.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(MemLibGuid.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib(CopyMem.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BasePcdLibNull/BasePcdLibNull/OUTPUT/BasePcdLibNull.lib(PcdLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(CheckSum.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SwitchStack.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SwapBytes64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SwapBytes32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SwapBytes16.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LongJump.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SetJump.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(RShiftU64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(RRotU64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(RRotU32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(MultU64x64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(MultU64x32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(MultS64x64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(ModU64x32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LShiftU64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LRotU64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LRotU32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LowBitSet64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LowBitSet32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(HighBitSet64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(HighBitSet32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(GetPowerOfTwo64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(GetPowerOfTwo32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DivU64x64Remainder.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DivU64x32Remainder.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DivU64x32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DivS64x64Remainder.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(ARShiftU64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(BitField.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(CpuDeadLoop.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Cpu.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LinkedList.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SafeString.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(String.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(FilePaths.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Thunk16.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(WriteTr.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Non-existing.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Math64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Unaligned.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86WriteIdtr.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86WriteGdtr.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86Thunk.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86ReadIdtr.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86ReadGdtr.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86Msr.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86GetInterruptState.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86FxSave.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86FxRestore.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86EnablePaging64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86EnablePaging32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86DisablePaging64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86DisablePaging32.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86RdRand.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(X86PatchInstruction.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(GccInline.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SwitchStack.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SetJump.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LongJump.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(EnableDisableInterrupts.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DisablePaging64.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(CpuId.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(CpuIdEx.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(EnableCache.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DisableCache.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(RdRand.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(ChkStkGcc.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull/OUTPUT/BaseDebugLibNull.lib(DebugLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib/OUTPUT/UefiBootServicesTableLib.lib(UefiBootServicesTableLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib/OUTPUT/UefiMemoryAllocationLib.lib(MemoryAllocationLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BasePrintLib/BasePrintLib/OUTPUT/BasePrintLib.lib(PrintLibInternal.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BasePrintLib/BasePrintLib/OUTPUT/BasePrintLib.lib(PrintLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib/OUTPUT/UefiRuntimeServicesTableLib.lib(UefiRuntimeServicesTableLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib/OUTPUT/UefiDevicePathLib.lib(DevicePathUtilities.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib/OUTPUT/UefiDevicePathLib.lib(DevicePathToText.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib/OUTPUT/UefiDevicePathLib.lib(DevicePathFromText.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib/OUTPUT/UefiDevicePathLib.lib(UefiDevicePathLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiLib/UefiLib/OUTPUT/UefiLib.lib(UefiLibPrint.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiLib/UefiLib/OUTPUT/UefiLib.lib(UefiNotTiano.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiLib/UefiLib/OUTPUT/UefiLib.lib(UefiDriverModel.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiLib/UefiLib/OUTPUT/UefiLib.lib(Console.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiLib/UefiLib/OUTPUT/UefiLib.lib(UefiLib.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint/OUTPUT/UefiApplicationEntryPoint.lib(ApplicationEntryPoint.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/loader.lib(loader.obj)
+                              (--whole-archive)
+/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/loader.lib(AutoGen.obj)
+                              (--whole-archive)
+
+破棄された入力セクション
+
+ .comment       0x0000000000000000      0x97e /tmp/cc6KfmsDdebugobj
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/cc6KfmsDdebugobj
+ .debug_abbrev  0x0000000000000000     0x6264 /tmp/cc6KfmsDdebugobj
+ .debug_line    0x0000000000000000     0x8bf3 /tmp/cc6KfmsDdebugobj
+ .debug_str     0x0000000000000000    0x341eb /tmp/cc6KfmsDdebugobj
+ .text          0x0000000000000000        0x0 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .data          0x0000000000000000        0x0 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .bss           0x0000000000000000        0x0 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text.InternalAssertJumpBuffer
+                0x0000000000000000        0x1 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .comment       0x0000000000000000       0x1b /tmp/cc09wzKp.ltrans0.ltrans.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text          0x0000000000000000      0x204 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Thunk16.obj)
+ .data          0x0000000000000000        0xa /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Thunk16.obj)
+ .text          0x0000000000000000        0x6 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(WriteTr.obj)
+ .text          0x0000000000000000        0xf /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SwitchStack.obj)
+ .text          0x0000000000000000       0x8f /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(SetJump.obj)
+ .text          0x0000000000000000       0x7c /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(LongJump.obj)
+ .text          0x0000000000000000        0x3 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(EnableDisableInterrupts.obj)
+ .text          0x0000000000000000       0x61 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DisablePaging64.obj)
+ .text          0x0000000000000000       0x27 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(CpuId.obj)
+ .text          0x0000000000000000       0x2f /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(CpuIdEx.obj)
+ .text          0x0000000000000000       0x13 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(EnableCache.obj)
+ .text          0x0000000000000000       0x13 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(DisableCache.obj)
+ .text          0x0000000000000000       0x36 /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(RdRand.obj)
+
+メモリ設定
+
+名前           原点             長さ             属性
+*default*        0x0000000000000000 0xffffffffffffffff
+
+リンカスクリプトおよびメモリマップ
+
+LOAD /tmp/cc6KfmsDdebugobj
+LOAD /tmp/cc09wzKp.ltrans0.ltrans.o
+START GROUP
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/BaseMemoryLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BasePcdLibNull/BasePcdLibNull/OUTPUT/BasePcdLibNull.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull/OUTPUT/BaseDebugLibNull.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib/OUTPUT/UefiBootServicesTableLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib/OUTPUT/UefiMemoryAllocationLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BasePrintLib/BasePrintLib/OUTPUT/BasePrintLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib/OUTPUT/UefiRuntimeServicesTableLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib/OUTPUT/UefiDevicePathLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiLib/UefiLib/OUTPUT/UefiLib.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint/OUTPUT/UefiApplicationEntryPoint.lib
+LOAD /home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/loader.lib
+END GROUP
+                0x0000000000000228                PECOFF_HEADER_SIZE = 0x228
+                0x0000000000000228                . = PECOFF_HEADER_SIZE
+
+.text           0x0000000000000240     0x15c4
+ *(.text .text.* .stub .gnu.linkonce.t.*)
+ .text.BasePrintLibFillBuffer
+                0x0000000000000240       0x28 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text.AsciiStrnLenS
+                0x0000000000000268       0x24 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text.StrnLenS
+                0x000000000000028c       0x25 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text.BasePrintLibSPrint.constprop.0
+                0x00000000000002b1       0xb8 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text.BasePrintLibSPrintMarker.constprop.1
+                0x0000000000000369      0xbc5 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text.Print    0x0000000000000f2e      0x158 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .text._ModuleEntryPoint
+                0x0000000000001086      0x20c /tmp/cc09wzKp.ltrans0.ltrans.o
+                0x0000000000001086                _ModuleEntryPoint
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.BasePrintLibSPrintMarker.constprop.1.str1.1
+                0x0000000000001292       0x7b /tmp/cc09wzKp.ltrans0.ltrans.o
+ *fill*         0x000000000000130d        0x1 
+ .rodata._ModuleEntryPoint.str2.2
+                0x000000000000130e      0x2b4 /tmp/cc09wzKp.ltrans0.ltrans.o
+ *fill*         0x00000000000015c2        0xe 
+ .rodata.mHexStr
+                0x00000000000015d0       0x10 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .rodata.str1.1
+                0x00000000000015e0      0x224 /tmp/cc09wzKp.ltrans0.ltrans.o
+                                        0x235 (緩和前のサイズ)
+ *(.got .got.*)
+ .got           0x0000000000001804        0x0 SetMem.obj (symbol from plugin)
+ .got.plt       0x0000000000001804        0x0 SetMem.obj (symbol from plugin)
+                0x0000000000001804                _GLOBAL_OFFSET_TABLE_
+ *:AutoGen.obj(.data.g*Guid)
+
+.plt            0x0000000000001810        0x0
+ .plt           0x0000000000001810        0x0 SetMem.obj (symbol from plugin)
+
+.plt.got        0x0000000000001808        0x0
+ .plt.got       0x0000000000001808        0x0 SetMem.obj (symbol from plugin)
+
+.data           0x0000000000001840      0x178
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data.gEfiFileInfoGuid
+                0x0000000000001840       0x10 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .data.gEfiSimpleFileSystemProtocolGuid
+                0x0000000000001850       0x10 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .data.rel.ro.local.mStatusString
+                0x0000000000001860      0x138 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .data.rel.ro   0x0000000000001998        0x0 SetMem.obj (symbol from plugin)
+ *(.bss .bss.*)
+ .bss.gST       0x0000000000001998        0x8 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .bss.gImageHandle
+                0x00000000000019a0        0x8 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .bss.gRT       0x00000000000019a8        0x8 /tmp/cc09wzKp.ltrans0.ltrans.o
+ .bss.gBS       0x00000000000019b0        0x8 /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.eh_frame       0x00000000000019c0        0x0
+ *(.eh_frame)
+ .eh_frame      0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+ .eh_frame      0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+
+.dynbss         0x00000000000019c0        0x0
+ .dynbss        0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+
+.gnu.version_d  0x00000000000019c0        0x0
+ .gnu.version_d
+                0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+
+.gnu.version    0x00000000000019c0        0x0
+ .gnu.version   0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+
+.gnu.version_r  0x00000000000019c0        0x0
+ .gnu.version_r
+                0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+
+.rela           0x00000000000019c0      0x3a8
+ *(.rela .rela.*)
+ .rela.plt      0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+ .rela.got      0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+ .rela.bss      0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+ .rela.data.rel.ro
+                0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+ .rela.ifunc    0x00000000000019c0        0x0 SetMem.obj (symbol from plugin)
+ .rela.data.rel.ro.local.mStatusString
+                0x00000000000019c0      0x3a8 SetMem.obj (symbol from plugin)
+
+.hii
+ *(.hii)
+
+.build-id       0x0000000000001d68       0x24
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000000001d68       0x24 SetMem.obj (symbol from plugin)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.interp)
+ *(.dynsym)
+ *(.dynstr)
+ *(.dynamic)
+ *(.hash .gnu.hash)
+ *(.comment)
+ *(COMMON)
+OUTPUT(/home/naoki/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/DEBUG/loader.dll elf64-x86-64)
+
+.debug_info     0x0000000000000000    0x32a96
+ .debug_info    0x0000000000000000    0x318f2 /tmp/cc6KfmsDdebugobj
+                0x0000000000000000                SetMem.c.32ec02e7
+                0x000000000000028d                ScanMem64Wrapper.c.0b23afb5
+                0x00000000000004d0                ScanMem32Wrapper.c.69579b10
+                0x0000000000000713                ScanMem16Wrapper.c.ad1bcfe8
+                0x0000000000000956                ScanMem8Wrapper.c.29ada911
+                0x0000000000000bca                ZeroMemWrapper.c.84825800
+                0x0000000000000df6                CompareMemWrapper.c.70543ee7
+                0x000000000000104f                SetMem64Wrapper.c.fff446ca
+                0x0000000000001287                SetMem32Wrapper.c.f6246c59
+                0x00000000000014bf                SetMem16Wrapper.c.7e388085
+                0x00000000000016f7                SetMemWrapper.c.4fd430cb
+                0x0000000000001964                CopyMemWrapper.c.1d78f57c
+                0x0000000000001ba7                IsZeroBufferWrapper.c.adb7e090
+                0x0000000000001ddc                MemLibGeneric.c.226503a0
+                0x000000000000227d                MemLibGuid.c.3778eb4b
+                0x0000000000002594                CopyMem.c.330ef810
+                0x0000000000002861                PcdLib.c.4ba99316
+                0x000000000000349c                CheckSum.c.84f74ae3
+                0x0000000000003999                SwitchStack.c.1cdcd515
+                0x0000000000003c77                SwapBytes64.c.f9428599
+                0x0000000000003ee0                SwapBytes32.c.19211b49
+                0x0000000000004161                SwapBytes16.c.44d57b20
+                0x00000000000043ca                LongJump.c.b7004467
+                0x0000000000004713                SetJump.c.4d225bb7
+                0x0000000000004a50                RShiftU64.c.9f4beb0e
+                0x0000000000004cd1                RRotU64.c.915bede0
+                0x0000000000004f52                RRotU32.c.1982e02f
+                0x00000000000051d3                MultU64x64.c.d278e65e
+                0x0000000000005454                MultU64x32.c.2f3c9c9a
+                0x00000000000056d5                MultS64x64.c.576b2606
+                0x0000000000005956                ModU64x32.c.60b63ea8
+                0x0000000000005bcb                LShiftU64.c.72d3134f
+                0x0000000000005e4c                LRotU64.c.b6dba86d
+                0x00000000000060cd                LRotU32.c.b648a704
+                0x000000000000634e                LowBitSet64.c.71b8f6aa
+                0x00000000000065db                LowBitSet32.c.c0b988a3
+                0x0000000000006868                HighBitSet64.c.0a5d3229
+                0x0000000000006ae9                HighBitSet32.c.8c0bfdc1
+                0x0000000000006d82                GetPowerOfTwo64.c.b08916fa
+                0x0000000000006ff7                GetPowerOfTwo32.c.f00aa889
+                0x0000000000007260                DivU64x64Remainder.c.e7e14260
+                0x00000000000074eb                DivU64x32Remainder.c.4dcb8244
+                0x0000000000007776                DivU64x32.c.7e3c5bcb
+                0x00000000000079eb                DivS64x64Remainder.c.304e26d2
+                0x0000000000007c82                ARShiftU64.c.6b255e5a
+                0x0000000000007f03                BitField.c.08e4a248
+                0x00000000000087b0                CpuDeadLoop.c.84b0f784
+                0x0000000000008a26                Cpu.c.2d804272
+                0x0000000000008cac                LinkedList.c.11b9a2c4
+                0x000000000000917b                SafeString.c.0497f5b4
+                0x0000000000009fef                String.c.a2800751
+                0x000000000000a992                FilePaths.c.900f1d38
+                0x000000000000ac4e                Non_existing.c.07530472
+                0x000000000000af81                Math64.c.7575e76f
+                0x000000000000b463                Unaligned.c.8129726c
+                0x000000000000b7f9                X86WriteIdtr.c.e0ccaccc
+                0x000000000000baad                X86WriteGdtr.c.78e05cd4
+                0x000000000000bd61                X86Thunk.c.22956629
+                0x000000000000c6bf                X86ReadIdtr.c.3e34e9b9
+                0x000000000000c96e                X86ReadGdtr.c.d41136c7
+                0x000000000000cc1d                X86Msr.c.6d5f4241
+                0x000000000000d286                X86GetInterruptState.c.894658ea
+                0x000000000000d6a0                X86FxSave.c.5780fcd8
+                0x000000000000d953                X86FxRestore.c.d6b62033
+                0x000000000000dc0b                X86EnablePaging64.c.5b2f4fe7
+                0x000000000000de9f                X86EnablePaging32.c.2549d437
+                0x000000000000e14d                X86DisablePaging64.c.2874f130
+                0x000000000000e3e1                X86DisablePaging32.c.ffda34ee
+                0x000000000000e68f                X86RdRand.c.e0377e8e
+                0x000000000000e948                X86PatchInstruction.c.80caf6c9
+                0x000000000000ebe9                GccInline.c.111cca8e
+                0x000000000000f6f5                ChkStkGcc.c.e67284df
+                0x000000000000f94d                DebugLib.c.8db97f27
+                0x000000000000fc2d                UefiBootServicesTableLib.c.073c0782
+                0x00000000000115bf                MemoryAllocationLib.c.77f6f42c
+                0x0000000000013451                PrintLibInternal.c.64f91d30
+                0x0000000000013c3e                PrintLib.c.5911d1c1
+                0x00000000000143d4                UefiRuntimeServicesTableLib.c.5ea67120
+                0x0000000000015d37                DevicePathUtilities.c.8d8547fd
+                0x0000000000017bb6                DevicePathToText.c.1fe920a7
+                0x000000000001b988                DevicePathFromText.c.cfbd37ac
+                0x0000000000020056                UefiDevicePathLib.c.3aa773f7
+                0x0000000000021c05                UefiLibPrint.c.e4e9282f
+                0x00000000000243b4                UefiNotTiano.c.2d8b0625
+                0x0000000000026048                UefiDriverModel.c.36daa670
+                0x0000000000028298                Console.c.d919843c
+                0x0000000000029fca                UefiLib.c.05520d1b
+                0x000000000002c319                ApplicationEntryPoint.c.af6e5c37
+                0x000000000002dcf3                loader.c.9aa91787
+                0x000000000002fc20                AutoGen.c.03b2f2e8
+ .debug_info    0x00000000000318f2     0x11a4 /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.debug_abbrev   0x0000000000000000      0x1a1
+ .debug_abbrev  0x0000000000000000      0x1a1 /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.debug_loc      0x0000000000000000     0x1fe1
+ .debug_loc     0x0000000000000000     0x1fe1 /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.debug_aranges  0x0000000000000000       0xa0
+ .debug_aranges
+                0x0000000000000000       0xa0 /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.debug_ranges   0x0000000000000000      0x520
+ .debug_ranges  0x0000000000000000      0x520 /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.debug_line     0x0000000000000000      0xdad
+ .debug_line    0x0000000000000000      0xdad /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.debug_str      0x0000000000000000      0x1ec
+ .debug_str     0x0000000000000000      0x1ec /tmp/cc09wzKp.ltrans0.ltrans.o
+
+.debug_frame    0x0000000000000000      0x258
+ .debug_frame   0x0000000000000000      0x258 /tmp/cc09wzKp.ltrans0.ltrans.o

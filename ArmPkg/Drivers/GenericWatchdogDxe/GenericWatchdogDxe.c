@@ -56,8 +56,7 @@ WatchdogWriteCompareRegister (
   UINT64  Value
   )
 {
-  MmioWrite32 (GENERIC_WDOG_COMPARE_VALUE_REG_LOW, Value & MAX_UINT32);
-  MmioWrite32 (GENERIC_WDOG_COMPARE_VALUE_REG_HIGH, (Value >> 32) & MAX_UINT32);
+  MmioWrite64 (GENERIC_WDOG_COMPARE_VALUE_REG, Value);
 }
 
 VOID

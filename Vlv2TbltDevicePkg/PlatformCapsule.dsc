@@ -23,7 +23,6 @@
   SUPPORTED_ARCHITECTURES        = IA32|X64
   BUILD_TARGETS                  = DEBUG|RELEASE
   SKUID_IDENTIFIER               = DEFAULT
-  POSTBUILD                      = Vlv2TbltDevicePkg/Feature/Capsule/GenerateCapsule/GenCapsuleAll.bat
 
 ###################################################################################################
 #

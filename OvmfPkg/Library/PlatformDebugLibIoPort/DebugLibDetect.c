@@ -17,25 +17,13 @@
 #include "DebugLibDetect.h"
 
 //
-// Set to TRUE if the debug I/O port has been checked
-//
-STATIC BOOLEAN mDebugIoPortChecked = FALSE;
-
-//
 // Set to TRUE if the debug I/O port is enabled
 //
 STATIC BOOLEAN mDebugIoPortFound = FALSE;
 
 /**
-  This constructor function must not do anything.
-
-  Some modules consuming this library instance, such as the DXE Core, invoke
-  the DEBUG() macro before they explicitly call
-  ProcessLibraryConstructorList(). Therefore the auto-generated call from
-  ProcessLibraryConstructorList() to this constructor function may be preceded
-  by some calls to PlatformDebugLibIoPortFound() below. Hence
-  PlatformDebugLibIoPortFound() must not rely on anything this constructor
-  could set up.
+  This constructor function checks if the debug I/O port device is present,
+  caching the result for later use.
 
   @retval RETURN_SUCCESS   The constructor always returns RETURN_SUCCESS.
 
@@ -46,12 +34,12 @@ PlatformDebugLibIoPortConstructor (
   VOID
   )
 {
+  mDebugIoPortFound = PlatformDebugLibIoPortDetect();
   return RETURN_SUCCESS;
 }
 
 /**
-  At the first call, check if the debug I/O port device is present, and cache
-  the result for later use. At subsequent calls, return the cached result.
+  Return the cached result of detecting the debug I/O port device.
 
   @retval TRUE   if the debug I/O port device was detected.
   @retval FALSE  otherwise
@@ -63,9 +51,5 @@ PlatformDebugLibIoPortFound (
   VOID
   )
 {
-  if (!mDebugIoPortChecked) {
-    mDebugIoPortFound = PlatformDebugLibIoPortDetect ();
-    mDebugIoPortChecked = TRUE;
-  }
   return mDebugIoPortFound;
 }

@@ -32,7 +32,7 @@ STATIC CONST ACPI_PARSER XsdtParser[] = {
 /**
   Get the ACPI XSDT header info.
 **/
-CONST ACPI_DESCRIPTION_HEADER_INFO *
+CONST ACPI_DESCRIPTION_HEADER_INFO* CONST
 EFIAPI
 GetAcpiXsdtHeaderInfo (
   VOID
@@ -96,7 +96,7 @@ ParseAcpiXsdt (
       CONST UINT8*  Revision;
 
       if ((UINT64*)(UINTN)(*TablePointer) != NULL) {
-        UINT8*      SignaturePtr;
+        UINT8*      Ptr;
 
         ParseAcpiHeader (
           (UINT8*)(UINTN)(*TablePointer),
@@ -105,17 +105,17 @@ ParseAcpiXsdt (
           &Revision
           );
 
-        SignaturePtr = (UINT8*)Signature;
+        Ptr = (UINT8*)Signature;
 
         UnicodeSPrint (
           Buffer,
           sizeof (Buffer),
           L"Entry[%d] - %c%c%c%c",
           EntryIndex++,
-          SignaturePtr[0],
-          SignaturePtr[1],
-          SignaturePtr[2],
-          SignaturePtr[3]
+          Ptr[0],
+          Ptr[1],
+          Ptr[2],
+          Ptr[3]
           );
       } else {
         UnicodeSPrint (

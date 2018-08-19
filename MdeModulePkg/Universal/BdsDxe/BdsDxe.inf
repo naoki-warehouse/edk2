@@ -100,7 +100,6 @@
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareRevision                  ## CONSUMES
   gEfiMdeModulePkgTokenSpaceGuid.PcdConInConnectOnDemand              ## CONSUMES
   gEfiMdeModulePkgTokenSpaceGuid.PcdErrorCodeSetVariable              ## SOMETIMES_CONSUMES
-  gEfiMdeModulePkgTokenSpaceGuid.PcdTestKeyUsed                       ## CONSUMES
 
 [Depex]
   TRUE

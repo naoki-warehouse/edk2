@@ -13,15 +13,13 @@
 ## Import Modules
 #
 from __future__ import print_function
-from __future__ import absolute_import
 from Common.GlobalData import *
 from CommonDataClass.Exceptions import BadExpression
 from CommonDataClass.Exceptions import WrnExpression
-from .Misc import GuidStringToGuidStructureString, ParseFieldValue
+from Misc import GuidStringToGuidStructureString, ParseFieldValue, IsFieldValueAnArray
 import Common.EdkLogger as EdkLogger
 import copy
 from Common.DataType import *
-import sys
 
 ERR_STRING_EXPR         = 'This operator cannot be used in string expression: [%s].'
 ERR_SNYTAX              = 'Syntax error, the rest of expression cannot be evaluated: [%s].'
@@ -138,11 +136,11 @@ def BuildOptionValue(PcdValue, GuidDict):
         InputValue = 'L"' + PcdValue[1:] + '"'
     else:
         InputValue = PcdValue
-    try:
-        PcdValue = ValueExpressionEx(InputValue, TAB_VOID, GuidDict)(True)
-    except:
-        pass
-
+    if IsFieldValueAnArray(InputValue):
+        try:
+            PcdValue = ValueExpressionEx(InputValue, TAB_VOID, GuidDict)(True)
+        except:
+            pass
     return PcdValue
 
 ## ReplaceExprMacro
@@ -256,8 +254,7 @@ class ValueExpression(BaseExpression):
                 Oprand2 = IntToStr(Oprand2)
         TypeDict = {
             type(0)  : 0,
-            # For python2 long type
-            type(sys.maxsize + 1) : 0,
+            type(0L) : 0,
             type('') : 1,
             type(True) : 2
         }
@@ -895,7 +892,7 @@ class ValueExpressionEx(ValueExpression):
                     raise BadExpression('Type %s PCD Value Size is Larger than 8 byte' % self.PcdType)
             else:
                 try:
-                    TmpValue = int(PcdValue)
+                    TmpValue = long(PcdValue)
                     TmpList = []
                     if TmpValue.bit_length() == 0:
                         PcdValue = '{0x00}'

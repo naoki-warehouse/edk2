@@ -1,0 +1,6 @@
+/home/naoki/xv6_uefi/edk2/xv6_bootloader/xv6_bootloader.dsc
+/home/naoki/xv6_uefi/edk2/Conf/tools_def.txt
+/home/naoki/xv6_uefi/edk2/xv6_bootloader/build/DEBUG_GCC5/BuildOptions
+/home/naoki/xv6_uefi/edk2/MdePkg/MdePkg.dec
+/home/naoki/xv6_uefi/edk2/Conf/build_rule.txt
+/home/naoki/xv6_uefi/edk2/xv6_bootloader/build/DEBUG_GCC5/PcdTokenNumber

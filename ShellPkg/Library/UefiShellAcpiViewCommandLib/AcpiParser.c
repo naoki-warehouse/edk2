@@ -297,7 +297,7 @@ DumpUint64 (
   Val = *(UINT32*)(Ptr + sizeof (UINT32));
 
   Val <<= 32;
-  Val |= (UINT64)*(UINT32*)Ptr;
+  Val |= *(UINT32*)Ptr;
 
   Print (Format, Val);
 }
@@ -476,7 +476,6 @@ ParseAcpi (
   UINT32  Index;
   UINT32  Offset;
   BOOLEAN HighLight;
-  UINTN   OriginalAttribute;
 
   Offset = 0;
 
@@ -485,6 +484,7 @@ ParseAcpi (
 
   if (Trace && (AsciiName != NULL)){
     HighLight = GetColourHighlighting ();
+    UINTN   OriginalAttribute;
 
     if (HighLight) {
       OriginalAttribute = gST->ConOut->Mode->Attribute;
@@ -516,7 +516,7 @@ ParseAcpi (
       IncrementErrorCount ();
       Print (
         L"\nERROR: %a: Offset Mismatch for %s\n"
-          L"CurrentOffset = %d FieldOffset = %d\n",
+          "CurrentOffset = %d FieldOffset = %d\n",
         AsciiName,
         Parser[Index].NameStr,
         Offset,

@@ -44,7 +44,6 @@
 [Packages]
   MdePkg/MdePkg.dec
   UefiCpuPkg/UefiCpuPkg.dec
-  MdeModulePkg/MdeModulePkg.dec
 
 [LibraryClasses]
   BaseLib
@@ -55,7 +54,6 @@
   CpuLib
   UefiCpuLib
   SynchronizationLib
-  PeiServicesLib
 
 [Pcd]
   gUefiCpuPkgTokenSpaceGuid.PcdCpuMaxLogicalProcessorNumber        ## CONSUMES
@@ -66,5 +64,3 @@
   gUefiCpuPkgTokenSpaceGuid.PcdCpuApLoopMode                       ## CONSUMES
   gUefiCpuPkgTokenSpaceGuid.PcdCpuApTargetCstate                   ## SOMETIMES_CONSUMES
 
-[Guids]
-  gEdkiiS3SmmInitDoneGuid

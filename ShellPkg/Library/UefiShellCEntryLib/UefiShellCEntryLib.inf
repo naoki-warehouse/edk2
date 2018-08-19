@@ -22,7 +22,8 @@
   LIBRARY_CLASS                  = ShellCEntryLib|UEFI_APPLICATION UEFI_DRIVER
 
 #
-#  VALID_ARCHITECTURES           = IA32 X64 EBC
+  VALID_ARCHITECTURES           = IA32|X64|EBC
+
 #
 
 [Sources.common]

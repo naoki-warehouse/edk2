@@ -15,8 +15,7 @@
 ##
 # Import Modules
 #
-from __future__ import absolute_import
-from . import Rule
+import Rule
 from  CommonDataClass.FdfClass import RuleComplexFileClassObject
 
 ## complex rule

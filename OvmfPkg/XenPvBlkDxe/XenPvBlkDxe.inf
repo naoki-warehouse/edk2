@@ -57,6 +57,7 @@
   gEfiComponentName2ProtocolGuid
   gEfiComponentNameProtocolGuid
   gXenBusProtocolGuid
+  gEfiDevicePathProtocolGuid                    ## TO_START
 
 
 [Guids]

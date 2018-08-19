@@ -41,7 +41,6 @@ WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 #include <Library/Tpm12DeviceLib.h>
 #include <Library/Tpm12CommandLib.h>
 #include <Library/BaseCryptLib.h>
-#include <Library/PerformanceLib.h>
 
 BOOLEAN                 mImageInMemory  = FALSE;
 
@@ -171,8 +170,6 @@ EndofPeiSignalNotifyCallBack (
 
   MeasuredHobData = NULL;
 
-  PERF_CALLBACK_BEGIN (&gEfiEndOfPeiSignalPpiGuid);
-
   //
   // Create a Guid hob to save all measured Fv
   //
@@ -197,8 +194,6 @@ EndofPeiSignalNotifyCallBack (
     //
     CopyMem (&MeasuredHobData->MeasuredFvBuf[mMeasuredBaseFvIndex] , mMeasuredChildFvInfo, sizeof(EFI_PLATFORM_FIRMWARE_BLOB) * (mMeasuredChildFvIndex));
   }
-
-  PERF_CALLBACK_END (&gEfiEndOfPeiSignalPpiGuid);
 
   return EFI_SUCCESS;
 }

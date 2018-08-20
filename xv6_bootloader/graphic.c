@@ -4,6 +4,13 @@
 #include <Library/UefiBootServicesTableLib.h>
 #include <Library/UefiLib.h>
 #include <Protocol/GraphicsOutput.h>
+#include  <Uefi.h>
+#include  <Protocol/BlockIo.h>
+#include  <Protocol/LoadedImage.h>
+#include  <Protocol/SimpleFileSystem.h>
+#include  <Library/DevicePathLib.h>
+#include  <Guid/FileInfo.h>
+#include  <Library/BaseMemoryLib.h>
 
 EFI_STATUS GetGraphicMode(
     IN EFI_HANDLE ImageHandle,
@@ -115,4 +122,79 @@ EFI_STATUS GetGraphicMode(
     Mode->pixels_per_scan_line = Gop->Mode->Info->PixelsPerScanLine;
 */
     return EFI_SUCCESS;
+}
+
+EFI_STATUS DrawBMP(CHAR16 *file_name,struct graphic_config *graphic_config) {
+  EFI_FILE_PROTOCOL *Root;
+  EFI_FILE_PROTOCOL *File;
+  EFI_SIMPLE_FILE_SYSTEM_PROTOCOL *SimpleFile;
+  EFI_STATUS Status;
+  EFI_PHYSICAL_ADDRESS bmp_addr = 0x1000000;
+
+  Status = gBS->LocateProtocol (
+    &gEfiSimpleFileSystemProtocolGuid,
+    NULL,
+    (VOID **)&SimpleFile
+  );
+  Print(L"SimpleFileSystemProtocol=%d\n", Status);
+  if (EFI_ERROR (Status)) {
+    Print(L"Failed to Locate Simple File System Protocol.\n");
+    return Status;
+  }
+  Status = SimpleFile->OpenVolume (SimpleFile, &Root);
+  Print(L"SimpleFileOpenVolume=%d\n",Status);
+  if (EFI_ERROR (Status)) {
+    Print(L"Failed to Open volume.\n");
+    return Status;
+  }
+  Status = Root->Open (Root, &File, file_name, EFI_FILE_MODE_READ, 0);
+  Print(L"SimpleFileOpenFile=%d\n",Status);
+  if (EFI_ERROR (Status)) {
+    Print(L"Cannot open %s\n", file_name);
+    return Status;
+  }
+
+  UINTN FileInfoBufferSize = sizeof(EFI_FILE_INFO) + sizeof(CHAR16) * StrLen(file_name) + 2;
+  UINT8 FileInfoBuffer[FileInfoBufferSize];
+  Status = File->GetInfo(File, &gEfiFileInfoGuid, &FileInfoBufferSize, FileInfoBuffer);
+  Print(L"FileInfoGet=%d\n",Status);
+  if (EFI_ERROR(Status)) {
+    Print(L"Failed to Get FileInfo\n");
+    return Status;
+  }
+  Status = gBS->AllocatePages(AllocateMaxAddress,EfiLoaderData,1,&bmp_addr);
+  if(EFI_ERROR(Status)){
+    Print(L"Failed to allocate bmp area\n");
+    return Status;
+  }
+  EFI_FILE_INFO *FileInfo = (EFI_FILE_INFO*)FileInfoBuffer;
+  UINTN KernelFileSize = FileInfo->FileSize;
+  Status = File->Read(
+    File,
+    &KernelFileSize,
+    (VOID *)bmp_addr
+  );
+  if (EFI_ERROR (Status)) {
+    Print(L"Failed to bitmap file\n");
+    return Status;
+  }
+
+  struct bmp_header *bmp_file = (struct bmp_header *)bmp_addr;
+  Print(L"BMP Address: %x\n",bmp_addr);
+  Print(L"BMP Signature : %x %x\n",bmp_file->sig[0],bmp_file->sig[1]);
+  Print(L"Graphic Pixel: %d\n",sizeof(struct graphic_pixel));
+  bmp_addr = bmp_addr + 54;
+  UINTN i;
+  UINTN max = graphic_config->horizontal_resolution*graphic_config->vertical_resolution;
+  for(i = 0;i<max;i++){
+    UINTN x = i%graphic_config->horizontal_resolution;
+    UINTN y = graphic_config->vertical_resolution-1-i/graphic_config->horizontal_resolution;
+    graphic_draw_pixel(x,y,(bmp_addr + i*3),graphic_config);
+  }
+  return Status;
+}
+
+void graphic_draw_pixel(UINTN x,UINTN y,EFI_PHYSICAL_ADDRESS bmp_addr,struct graphic_config *graphic_config){
+  EFI_PHYSICAL_ADDRESS addr = (y*graphic_config->pixels_per_scan_line + x)*sizeof(struct graphic_pixel)+graphic_config->frame_base;
+  CopyMem((VOID *)addr,(VOID *)bmp_addr,3);
 }

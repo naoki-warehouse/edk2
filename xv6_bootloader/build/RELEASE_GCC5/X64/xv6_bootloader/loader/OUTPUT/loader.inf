@@ -71,6 +71,8 @@
 [Guids.X64]
   gEfiFileInfoGuid
 
+  gEfiAcpiTableGuid
+
   ## SOMETIMES_CONSUMES  ## GUID
   gEfiVTUTF8Guid
 
@@ -115,13 +117,14 @@
 
 [LibraryClasses.X64]
 ## @LIB_INSTANCES
+#  MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
+#  MdePkg/Library/BasePrintLib/BasePrintLib.inf
 #  MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf
 #  MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
 #  MdePkg/Library/BaseLib/BaseLib.inf
-#  MdePkg/Library/BaseDebugLibNull/BaseDebugLibNull.inf
+#  MdePkg/Library/UefiDebugLibConOut/UefiDebugLibConOut.inf
 #  MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
 #  MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
-#  MdePkg/Library/BasePrintLib/BasePrintLib.inf
 #  MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
 #  MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf
 #  MdePkg/Library/UefiLib/UefiLib.inf

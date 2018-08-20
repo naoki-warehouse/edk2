@@ -26,6 +26,7 @@ UefiMain (
 {
   EFI_STATUS Status;
   CHAR16 *KernelPath = L"\\kernel";
+  CHAR16 *bmp_file = L"\\logo.bmp";
   EFI_PHYSICAL_ADDRESS BootParamAddr = 0x50000;
   EFI_PHYSICAL_ADDRESS KernelBaseAddr;
 
@@ -58,7 +59,6 @@ UefiMain (
   Print(L"Horizontal Resolution: %x\n",boot_param->graphic_config.horizontal_resolution);
   Print(L"Vertical Resolution: %x\n",boot_param->graphic_config.vertical_resolution);
   Print(L"Pixels per Scan Line: %x\n",boot_param->graphic_config.pixels_per_scan_line);
-
   UINTN entries = (acpi_xsdt->h.len - sizeof(acpi_xsdt->h)) / 8;
   for(i=0;i<entries;i++){
     struct sdt_header *h = (struct sdt_header *)acpi_xsdt->pointer_others[i];
@@ -149,6 +149,10 @@ UefiMain (
     return Status;
   }
   Print(L"AllocatePool=%d\n",Status);
+  Status = DrawBMP(bmp_file,&(boot_param->graphic_config));
+  if(EFI_ERROR(Status)){
+    Print(L"Failed to draw bitmap file %s\n",bmp_file);
+  }
   gBS->GetMemoryMap(
             &MemoryMap.MapSize,
             (EFI_MEMORY_DESCRIPTOR*)MemoryMap.Buffer,

@@ -23,6 +23,7 @@ extern CHAR8 *gEfiCallerBaseName;
 
 // Guids
 extern EFI_GUID gEfiFileInfoGuid;
+extern EFI_GUID gEfiAcpiTableGuid;
 extern EFI_GUID gEfiMdePkgTokenSpaceGuid;
 extern EFI_GUID gEfiVTUTF8Guid;
 extern EFI_GUID gEfiVT100Guid;

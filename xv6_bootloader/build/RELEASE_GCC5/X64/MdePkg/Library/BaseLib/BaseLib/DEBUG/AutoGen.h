@@ -27,32 +27,32 @@ extern GUID gEfiMdePkgTokenSpaceGuid;
 extern UINT64 _gPcd_SkuId_Array[];
 
 // PCD definitions
-#define _PCD_TOKEN_PcdVerifyNodeInList  1U
+#define _PCD_TOKEN_PcdVerifyNodeInList  4U
 extern const BOOLEAN _gPcd_FixedAtBuild_PcdVerifyNodeInList;
 #define _PCD_GET_MODE_BOOL_PcdVerifyNodeInList  _gPcd_FixedAtBuild_PcdVerifyNodeInList
 //#define _PCD_SET_MODE_BOOL_PcdVerifyNodeInList  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
-#define _PCD_TOKEN_PcdMaximumLinkedListLength  2U
+#define _PCD_TOKEN_PcdMaximumLinkedListLength  5U
 extern const UINT32 _gPcd_FixedAtBuild_PcdMaximumLinkedListLength;
 #define _PCD_GET_MODE_32_PcdMaximumLinkedListLength  _gPcd_FixedAtBuild_PcdMaximumLinkedListLength
 //#define _PCD_SET_MODE_32_PcdMaximumLinkedListLength  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
 #define _PCD_VALUE_PcdMaximumLinkedListLength 1000000
 #define _PCD_SIZE_PcdMaximumLinkedListLength 4
 #define _PCD_GET_MODE_SIZE_PcdMaximumLinkedListLength _PCD_SIZE_PcdMaximumLinkedListLength
-#define _PCD_TOKEN_PcdMaximumAsciiStringLength  3U
+#define _PCD_TOKEN_PcdMaximumAsciiStringLength  2U
 extern const UINT32 _gPcd_FixedAtBuild_PcdMaximumAsciiStringLength;
 #define _PCD_GET_MODE_32_PcdMaximumAsciiStringLength  _gPcd_FixedAtBuild_PcdMaximumAsciiStringLength
 //#define _PCD_SET_MODE_32_PcdMaximumAsciiStringLength  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
 #define _PCD_VALUE_PcdMaximumAsciiStringLength 1000000
 #define _PCD_SIZE_PcdMaximumAsciiStringLength 4
 #define _PCD_GET_MODE_SIZE_PcdMaximumAsciiStringLength _PCD_SIZE_PcdMaximumAsciiStringLength
-#define _PCD_TOKEN_PcdMaximumUnicodeStringLength  4U
+#define _PCD_TOKEN_PcdMaximumUnicodeStringLength  3U
 extern const UINT32 _gPcd_FixedAtBuild_PcdMaximumUnicodeStringLength;
 #define _PCD_GET_MODE_32_PcdMaximumUnicodeStringLength  _gPcd_FixedAtBuild_PcdMaximumUnicodeStringLength
 //#define _PCD_SET_MODE_32_PcdMaximumUnicodeStringLength  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
 #define _PCD_VALUE_PcdMaximumUnicodeStringLength 1000000
 #define _PCD_SIZE_PcdMaximumUnicodeStringLength 4
 #define _PCD_GET_MODE_SIZE_PcdMaximumUnicodeStringLength _PCD_SIZE_PcdMaximumUnicodeStringLength
-#define _PCD_TOKEN_PcdDebugPropertyMask  5U
+#define _PCD_TOKEN_PcdDebugPropertyMask  6U
 extern const UINT8 _gPcd_FixedAtBuild_PcdDebugPropertyMask;
 #define _PCD_GET_MODE_8_PcdDebugPropertyMask  _gPcd_FixedAtBuild_PcdDebugPropertyMask
 //#define _PCD_SET_MODE_8_PcdDebugPropertyMask  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD

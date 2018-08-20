@@ -43,27 +43,27 @@ extern EFI_GUID gEfiDriverDiagnostics2ProtocolGuid;
 extern UINT64 _gPcd_SkuId_Array[];
 
 // PCD definitions
-#define _PCD_TOKEN_PcdDriverDiagnosticsDisable  7U
+#define _PCD_TOKEN_PcdDriverDiagnosticsDisable  10U
 extern const BOOLEAN _gPcd_FixedAtBuild_PcdDriverDiagnosticsDisable;
 #define _PCD_GET_MODE_BOOL_PcdDriverDiagnosticsDisable  _gPcd_FixedAtBuild_PcdDriverDiagnosticsDisable
 //#define _PCD_SET_MODE_BOOL_PcdDriverDiagnosticsDisable  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
-#define _PCD_TOKEN_PcdComponentNameDisable  8U
+#define _PCD_TOKEN_PcdComponentNameDisable  11U
 extern const BOOLEAN _gPcd_FixedAtBuild_PcdComponentNameDisable;
 #define _PCD_GET_MODE_BOOL_PcdComponentNameDisable  _gPcd_FixedAtBuild_PcdComponentNameDisable
 //#define _PCD_SET_MODE_BOOL_PcdComponentNameDisable  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
-#define _PCD_TOKEN_PcdDriverDiagnostics2Disable  9U
+#define _PCD_TOKEN_PcdDriverDiagnostics2Disable  12U
 extern const BOOLEAN _gPcd_FixedAtBuild_PcdDriverDiagnostics2Disable;
 #define _PCD_GET_MODE_BOOL_PcdDriverDiagnostics2Disable  _gPcd_FixedAtBuild_PcdDriverDiagnostics2Disable
 //#define _PCD_SET_MODE_BOOL_PcdDriverDiagnostics2Disable  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
-#define _PCD_TOKEN_PcdComponentName2Disable  10U
+#define _PCD_TOKEN_PcdComponentName2Disable  13U
 extern const BOOLEAN _gPcd_FixedAtBuild_PcdComponentName2Disable;
 #define _PCD_GET_MODE_BOOL_PcdComponentName2Disable  _gPcd_FixedAtBuild_PcdComponentName2Disable
 //#define _PCD_SET_MODE_BOOL_PcdComponentName2Disable  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
-#define _PCD_TOKEN_PcdUgaConsumeSupport  11U
+#define _PCD_TOKEN_PcdUgaConsumeSupport  14U
 extern const BOOLEAN _gPcd_FixedAtBuild_PcdUgaConsumeSupport;
 #define _PCD_GET_MODE_BOOL_PcdUgaConsumeSupport  _gPcd_FixedAtBuild_PcdUgaConsumeSupport
 //#define _PCD_SET_MODE_BOOL_PcdUgaConsumeSupport  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD
-#define _PCD_TOKEN_PcdUefiLibMaxPrintBufferSize  12U
+#define _PCD_TOKEN_PcdUefiLibMaxPrintBufferSize  15U
 extern const UINT32 _gPcd_FixedAtBuild_PcdUefiLibMaxPrintBufferSize;
 #define _PCD_GET_MODE_32_PcdUefiLibMaxPrintBufferSize  _gPcd_FixedAtBuild_PcdUefiLibMaxPrintBufferSize
 //#define _PCD_SET_MODE_32_PcdUefiLibMaxPrintBufferSize  ASSERT(FALSE)  // It is not allowed to set value for a FIXED_AT_BUILD PCD

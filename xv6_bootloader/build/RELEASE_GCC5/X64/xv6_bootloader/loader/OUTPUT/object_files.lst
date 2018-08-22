@@ -2,4 +2,5 @@
 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/relocate.obj
 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/memory_map.obj
 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/graphic.obj
+/home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/file_loader.obj
 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/AutoGen.obj

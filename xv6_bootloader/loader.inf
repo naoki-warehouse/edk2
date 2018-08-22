@@ -11,6 +11,7 @@
   relocate.c
   memory_map.c
   graphic.c
+  file_loader.c
 
 [Packages]
   MdePkg/MdePkg.dec

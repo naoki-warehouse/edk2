@@ -212,26 +212,28 @@ Archive member included to satisfy reference by file (symbol)
                               (--whole-archive)
 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/loader.lib(graphic.obj)
                               (--whole-archive)
+/home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/loader.lib(file_loader.obj)
+                              (--whole-archive)
 
 破棄された入力セクション
 
- .comment       0x0000000000000000      0x69c /tmp/ccqSh0Twdebugobj
+ .comment       0x0000000000000000      0x6ae /tmp/ccafQy8jdebugobj
  .note.GNU-stack
-                0x0000000000000000        0x0 /tmp/ccqSh0Twdebugobj
- .text          0x0000000000000000        0x0 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .data          0x0000000000000000        0x0 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .bss           0x0000000000000000        0x0 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000000        0x0 /tmp/ccafQy8jdebugobj
+ .text          0x0000000000000000        0x0 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .data          0x0000000000000000        0x0 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .bss           0x0000000000000000        0x0 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.DebugPrint.constprop.7.str1.1
-                0x0000000000000000       0x21 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000000       0x21 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.DebugPrint.constprop.7
-                0x0000000000000000       0x65 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000000       0x65 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.InternalAssertJumpBuffer.str1.1
-                0x0000000000000000       0x74 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000000       0x74 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.InternalAssertJumpBuffer
-                0x0000000000000000       0x44 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .comment       0x0000000000000000       0x12 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000000       0x44 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .comment       0x0000000000000000       0x12 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .note.GNU-stack
-                0x0000000000000000        0x0 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000000        0x0 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text          0x0000000000000000      0x204 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Thunk16.obj)
  .data          0x0000000000000000        0xa /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(Thunk16.obj)
  .text          0x0000000000000000        0x6 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseLib/BaseLib/OUTPUT/BaseLib.lib(WriteTr.obj)
@@ -253,8 +255,8 @@ Archive member included to satisfy reference by file (symbol)
 
 リンカスクリプトおよびメモリマップ
 
-LOAD /tmp/ccqSh0Twdebugobj
-LOAD /tmp/ccia3uHJ.ltrans0.ltrans.o
+LOAD /tmp/ccafQy8jdebugobj
+LOAD /tmp/cc4wRnbh.ltrans0.ltrans.o
 START GROUP
 LOAD /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib/OUTPUT/BaseDebugPrintErrorLevelLib.lib
 LOAD /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/MdePkg/Library/BasePrintLib/BasePrintLib/OUTPUT/BasePrintLib.lib
@@ -273,162 +275,165 @@ END GROUP
                 0x0000000000000228                PECOFF_HEADER_SIZE = 0x228
                 0x0000000000000228                . = PECOFF_HEADER_SIZE
 
-.text           0x0000000000000240     0x4614
+.text           0x0000000000000240     0x4414
  *(.text .text.* .stub .gnu.linkonce.t.*)
  .text.InternalAllocatePool.constprop.5
-                0x0000000000000240       0x37 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000240       0x37 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.DebugAssertEnabled
-                0x0000000000000277        0x3 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000277        0x3 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.AsciiStrnLenS
-                0x000000000000027a       0x26 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x000000000000027a       0x26 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.BasePrintLibFillBuffer
-                0x00000000000002a0       0x28 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000002a0       0x28 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.UnicodeSPrintAsciiFormat.constprop.16
-                0x00000000000002c8       0x29 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000002c8       0x29 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.DebugAssert
-                0x00000000000002f1       0x5e /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000002f1       0x5e /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.ReadUnaligned64
-                0x000000000000034f       0x37 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x000000000000034f       0x37 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.ReadUnaligned16
-                0x0000000000000386        0x4 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000386        0x4 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.AsciiStrLen
-                0x000000000000038a       0x7a /tmp/ccia3uHJ.ltrans0.ltrans.o
- .text.StrLen   0x0000000000000404       0x76 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x000000000000038a       0x7a /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.StrnLenS
-                0x000000000000047a       0x5d /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000404       0x5d /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.BasePrintLibSPrintMarker.constprop.17
-                0x00000000000004d7      0xd5f /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000461      0xd5f /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.BasePrintLibSPrint.constprop.18
-                0x0000000000001236       0xb8 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000011c0       0xb8 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.CopyMem.part.0
-                0x00000000000012ee      0x262 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000001278      0x262 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.UnicodeVSPrintAsciiFormat
-                0x0000000000001550       0xe8 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000014da       0xe8 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.AsciiSPrint.constprop.14
-                0x0000000000001638       0xc4 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000015c2       0xc4 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.FreePool
-                0x00000000000016fc       0x40 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .text.Print    0x000000000000173c      0x1d9 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000001686       0x40 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .text.Print    0x00000000000016c6      0x1d9 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.AsciiPrint.constprop.3
-                0x0000000000001915      0x17c /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x000000000000189f      0x17c /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .text.LoadFile
+                0x0000000000001a1b      0x257 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text.UefiMain
-                0x0000000000001a91     0x116a /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000001c72      0xe9f /tmp/cc4wRnbh.ltrans0.ltrans.o
  .text._ModuleEntryPoint
-                0x0000000000002bfb       0xd6 /tmp/ccia3uHJ.ltrans0.ltrans.o
-                0x0000000000002bfb                _ModuleEntryPoint
+                0x0000000000002b11       0xd6 /tmp/cc4wRnbh.ltrans0.ltrans.o
+                0x0000000000002b11                _ModuleEntryPoint
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.UnicodeSPrintAsciiFormat.constprop.16.str1.1
-                0x0000000000002cd1       0x18 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000002be7       0x18 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.DebugAssert.str1.1
-                0x0000000000002ce9        0x7 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000002bff        0x7 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.ReadUnaligned64.str1.1
-                0x0000000000002cf0       0x4f /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000002c06       0x4f /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.AsciiStrLen.str1.1
-                0x0000000000002d3f       0x84 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .rodata.StrLen.str1.1
-                0x0000000000002dc3       0x5d /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000002c55       0x84 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.StrnLenS.str1.1
-                0x0000000000002e20       0x39 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000002cd9       0x5c /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.BasePrintLibSPrintMarker.constprop.17.str1.1
-                0x0000000000002e59      0x284 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000002d35      0x284 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.CopyMem.part.0.str1.1
-                0x00000000000030dd       0xc4 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000002fb9       0xc4 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.UnicodeVSPrintAsciiFormat.str1.1
-                0x00000000000031a1       0x64 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x000000000000307d       0x64 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.AsciiSPrint.constprop.14.str1.1
-                0x0000000000003205       0x38 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000030e1       0x38 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.FreePool.str1.1
-                0x000000000000323d       0x66 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000003119       0x66 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.Print.str1.1
-                0x00000000000032a3       0x9d /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x000000000000317f       0x9d /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.AsciiPrint.constprop.3.str1.1
-                0x0000000000003340        0x3 /tmp/ccia3uHJ.ltrans0.ltrans.o
- *fill*         0x0000000000003343        0x1 
+                0x000000000000321c        0x3 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ *fill*         0x000000000000321f        0x1 
+ .rodata.LoadFile.str2.2
+                0x0000000000003220      0x1bc /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .rodata.LoadFile.str1.1
+                0x00000000000033dc       0x3a /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.UefiMain.str2.2
-                0x0000000000003344     0x1034 /tmp/ccia3uHJ.ltrans0.ltrans.o
-                                       0x109a (緩和前のサイズ)
+                0x0000000000003416      0xd7a /tmp/cc4wRnbh.ltrans0.ltrans.o
+                                        0xde0 (緩和前のサイズ)
  .rodata.UefiMain.str1.1
-                0x0000000000004378       0xea /tmp/ccia3uHJ.ltrans0.ltrans.o
- *fill*         0x0000000000004462       0x1e 
- .rodata        0x0000000000004480       0x30 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000004190       0xea /tmp/cc4wRnbh.ltrans0.ltrans.o
+ *fill*         0x000000000000427a        0x6 
+ .rodata        0x0000000000004280       0x30 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.UefiMain
-                0x00000000000044b0       0x58 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000042b0       0x58 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata._ModuleEntryPoint.str1.1
-                0x0000000000004508      0x10f /tmp/ccia3uHJ.ltrans0.ltrans.o
- *fill*         0x0000000000004617        0x9 
+                0x0000000000004308      0x10f /tmp/cc4wRnbh.ltrans0.ltrans.o
+ *fill*         0x0000000000004417        0x9 
  .rodata.mHexStr
-                0x0000000000004620       0x10 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000004420       0x10 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .rodata.str1.1
-                0x0000000000004630      0x224 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000004430      0x224 /tmp/cc4wRnbh.ltrans0.ltrans.o
                                         0x235 (緩和前のサイズ)
  *(.got .got.*)
- .got           0x0000000000004854        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
- .got.plt       0x0000000000004854        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .got           0x0000000000004654        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .got.plt       0x0000000000004654        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
  *:AutoGen.obj(.data.g*Guid)
 
-.plt            0x0000000000004860        0x0
- .plt           0x0000000000004860        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+.plt            0x0000000000004660        0x0
+ .plt           0x0000000000004660        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
-.plt.got        0x0000000000004858        0x0
- .plt.got       0x0000000000004858        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+.plt.got        0x0000000000004658        0x0
+ .plt.got       0x0000000000004658        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
-.data           0x0000000000004880      0x198
+.data           0x0000000000004680      0x198
  *(.data .data.* .gnu.linkonce.d.*)
  .data.gEfiGraphicsOutputProtocolGuid
-                0x0000000000004880       0x10 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .data.gEfiFileInfoGuid
-                0x0000000000004890       0x10 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .data.gEfiSimpleFileSystemProtocolGuid
-                0x00000000000048a0       0x10 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000004680       0x10 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .data.gEfiAcpiTableGuid
-                0x00000000000048b0       0x10 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000004690       0x10 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .data.gEfiFileInfoGuid
+                0x00000000000046a0       0x10 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .data.gEfiSimpleFileSystemProtocolGuid
+                0x00000000000046b0       0x10 /tmp/cc4wRnbh.ltrans0.ltrans.o
  .data.rel.ro.local.mStatusString
-                0x00000000000048c0      0x138 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .data.rel.ro   0x00000000000049f8        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+                0x00000000000046c0      0x138 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .data.rel.ro   0x00000000000047f8        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
  *(.bss .bss.*)
  .bss.gImageHandle
-                0x00000000000049f8        0x8 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .bss.gRT       0x0000000000004a00        0x8 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .bss.gBS       0x0000000000004a08        0x8 /tmp/ccia3uHJ.ltrans0.ltrans.o
- .bss.gST       0x0000000000004a10        0x8 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000047f8        0x8 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .bss.gRT       0x0000000000004800        0x8 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .bss.gBS       0x0000000000004808        0x8 /tmp/cc4wRnbh.ltrans0.ltrans.o
+ .bss.gST       0x0000000000004810        0x8 /tmp/cc4wRnbh.ltrans0.ltrans.o
 
-.eh_frame       0x0000000000004a40        0x0
+.eh_frame       0x0000000000004840        0x0
  *(.eh_frame)
- .eh_frame      0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
- .eh_frame      0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .eh_frame      0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .eh_frame      0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
-.dynbss         0x0000000000004a40        0x0
- .dynbss        0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+.dynbss         0x0000000000004840        0x0
+ .dynbss        0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
-.gnu.version_d  0x0000000000004a40        0x0
+.gnu.version_d  0x0000000000004840        0x0
  .gnu.version_d
-                0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+                0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
-.gnu.version    0x0000000000004a40        0x0
- .gnu.version   0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+.gnu.version    0x0000000000004840        0x0
+ .gnu.version   0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
-.gnu.version_r  0x0000000000004a40        0x0
+.gnu.version_r  0x0000000000004840        0x0
  .gnu.version_r
-                0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+                0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
-.rela           0x0000000000004a40      0x3a8
+.rela           0x0000000000004840      0x3a8
  *(.rela .rela.*)
- .rela.plt      0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
- .rela.got      0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
- .rela.bss      0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .rela.plt      0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .rela.got      0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .rela.bss      0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
  .rela.data.rel.ro
-                0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
- .rela.ifunc    0x0000000000004a40        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+                0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+ .rela.ifunc    0x0000000000004840        0x0 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
  .rela.data.rel.ro.local.mStatusString
-                0x0000000000004a40      0x3a8 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+                0x0000000000004840      0x3a8 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
 .hii
  *(.hii)
 
-.build-id       0x0000000000004de8       0x24
+.build-id       0x0000000000004be8       0x24
  *(.note.gnu.build-id)
  .note.gnu.build-id
-                0x0000000000004de8       0x24 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
+                0x0000000000004be8       0x24 BaseDebugPrintErrorLevelLib.obj (symbol from plugin)
 
 /DISCARD/
  *(.note.GNU-stack)
@@ -442,8 +447,8 @@ END GROUP
  *(COMMON)
 OUTPUT(/home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/DEBUG/loader.dll elf64-x86-64)
 
-.debug_info     0x0000000000000000    0x3d2ca
- .debug_info    0x0000000000000000    0x39a10 /tmp/ccqSh0Twdebugobj
+.debug_info     0x0000000000000000    0x3e644
+ .debug_info    0x0000000000000000    0x3b03d /tmp/ccafQy8jdebugobj
                 0x0000000000000000                BaseDebugPrintErrorLevelLib.c.03120c98
                 0x000000000000023f                PrintLibInternal.c.ddd3d916
                 0x0000000000000a2c                PrintLib.c.e0e1e126
@@ -535,34 +540,35 @@ OUTPUT(/home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader
                 0x000000000002dd2e                ApplicationEntryPoint.c.8db35234
                 0x000000000002f708                loader.c.40b044b7
                 0x00000000000317c2                AutoGen.c.4b3e6705
-                0x00000000000334d2                relocate.c.62dce3ba
-                0x000000000003568a                memory_map.c.2dff38d1
-                0x000000000003759d                graphic.c.0b2f17e3
- .debug_info    0x0000000000039a10     0x38ba /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x00000000000334d2                relocate.c.d81be113
+                0x0000000000035204                memory_map.c.2dff38d1
+                0x0000000000037117                graphic.c.e4aec6eb
+                0x0000000000039110                file_loader.c.70c49213
+ .debug_info    0x000000000003b03d     0x3607 /tmp/cc4wRnbh.ltrans0.ltrans.o
 
-.debug_abbrev   0x0000000000000000     0x6d9b
- .debug_abbrev  0x0000000000000000     0x6b2e /tmp/ccqSh0Twdebugobj
- .debug_abbrev  0x0000000000006b2e      0x26d /tmp/ccia3uHJ.ltrans0.ltrans.o
+.debug_abbrev   0x0000000000000000     0x6f41
+ .debug_abbrev  0x0000000000000000     0x6cf0 /tmp/ccafQy8jdebugobj
+ .debug_abbrev  0x0000000000006cf0      0x251 /tmp/cc4wRnbh.ltrans0.ltrans.o
 
-.debug_line     0x0000000000000000     0xbc3d
- .debug_line    0x0000000000000000     0xa048 /tmp/ccqSh0Twdebugobj
- .debug_line    0x000000000000a048     0x1bf5 /tmp/ccia3uHJ.ltrans0.ltrans.o
+.debug_line     0x0000000000000000     0xbf33
+ .debug_line    0x0000000000000000     0xa35a /tmp/ccafQy8jdebugobj
+ .debug_line    0x000000000000a35a     0x1bd9 /tmp/cc4wRnbh.ltrans0.ltrans.o
 
-.debug_str      0x0000000000000000     0x9545
- .debug_str     0x0000000000000000     0x93d4 /tmp/ccqSh0Twdebugobj
-                                      0x3b269 (緩和前のサイズ)
- .debug_str     0x00000000000093d4      0x171 /tmp/ccia3uHJ.ltrans0.ltrans.o
+.debug_str      0x0000000000000000     0x9594
+ .debug_str     0x0000000000000000     0x9423 /tmp/ccafQy8jdebugobj
+                                      0x3c806 (緩和前のサイズ)
+ .debug_str     0x0000000000009423      0x171 /tmp/cc4wRnbh.ltrans0.ltrans.o
                                         0x1e9 (緩和前のサイズ)
 
-.debug_loc      0x0000000000000000     0x5840
- .debug_loc     0x0000000000000000     0x5840 /tmp/ccia3uHJ.ltrans0.ltrans.o
+.debug_loc      0x0000000000000000     0x5730
+ .debug_loc     0x0000000000000000     0x5730 /tmp/cc4wRnbh.ltrans0.ltrans.o
 
 .debug_aranges  0x0000000000000000      0x190
  .debug_aranges
-                0x0000000000000000      0x190 /tmp/ccia3uHJ.ltrans0.ltrans.o
+                0x0000000000000000      0x190 /tmp/cc4wRnbh.ltrans0.ltrans.o
 
-.debug_ranges   0x0000000000000000      0xd00
- .debug_ranges  0x0000000000000000      0xd00 /tmp/ccia3uHJ.ltrans0.ltrans.o
+.debug_ranges   0x0000000000000000      0xd20
+ .debug_ranges  0x0000000000000000      0xd20 /tmp/cc4wRnbh.ltrans0.ltrans.o
 
-.debug_frame    0x0000000000000000      0x678
- .debug_frame   0x0000000000000000      0x678 /tmp/ccia3uHJ.ltrans0.ltrans.o
+.debug_frame    0x0000000000000000      0x6b8
+ .debug_frame   0x0000000000000000      0x6b8 /tmp/cc4wRnbh.ltrans0.ltrans.o

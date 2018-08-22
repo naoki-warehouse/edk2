@@ -1,4 +1,5 @@
 /home/naoki/XV6/edk2/MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
+/home/naoki/XV6/edk2/xv6_bootloader/file_loader.c
 /home/naoki/XV6/edk2/xv6_bootloader/memory_map.c
 /home/naoki/XV6/edk2/MdePkg/Library/UefiLib/UefiLib.inf
 /home/naoki/XV6/edk2/MdePkg/Library/BaseMemoryLib/BaseMemoryLib.inf
@@ -28,7 +29,7 @@
 /home/naoki/XV6/edk2/xv6_bootloader/relocate.c
 /home/naoki/XV6/edk2/MdePkg/Include/Library/DebugLib.h
 /home/naoki/XV6/edk2/MdePkg/Include/Library/PrintLib.h
-/home/naoki/XV6/edk2/MdePkg/Include/Library/BaseMemoryLib.h
+/home/naoki/XV6/edk2/xv6_bootloader/file_loader.h
 /home/naoki/XV6/edk2/MdePkg/Include/Uefi/UefiInternalFormRepresentation.h
 /home/naoki/XV6/edk2/MdePkg/Include/IndustryStandard/Acpi51.h
 /home/naoki/XV6/edk2/MdePkg/Include/X64/ProcessorBind.h
@@ -61,6 +62,7 @@
 /home/naoki/XV6/edk2/xv6_bootloader/structs.h
 /home/naoki/XV6/edk2/MdePkg/Include/Protocol/DevicePath.h
 /home/naoki/XV6/edk2/MdePkg/Include/IndustryStandard/Bluetooth.h
+/home/naoki/XV6/edk2/MdePkg/Include/Library/BaseMemoryLib.h
 /home/naoki/XV6/edk2/MdePkg/Include/Protocol/SimpleTextOut.h
 /home/naoki/XV6/edk2/xv6_bootloader/elf.h
 /home/naoki/XV6/edk2/MdePkg/Library/BasePrintLib/BasePrintLib.inf

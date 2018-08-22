@@ -10,74 +10,17 @@
 #include  <Library/BaseMemoryLib.h>
 #include "elf.h"
 #include "relocate.h"
+#include "file_loader.h"
+
 EFI_STATUS RelocateELF(CHAR16* KernelPath, EFI_PHYSICAL_ADDRESS* RelocateAddr){
   EFI_STATUS Status;
-  EFI_FILE_PROTOCOL *Root;
-  EFI_FILE_PROTOCOL *File;
-  EFI_SIMPLE_FILE_SYSTEM_PROTOCOL *SimpleFile;
-  Status = gBS->LocateProtocol (
-    &gEfiSimpleFileSystemProtocolGuid,
-    NULL,
-    (VOID **)&SimpleFile
-  );
-  Print(L"SimpleFileSystemProtocol=%d\n", Status);
-  if (EFI_ERROR (Status)) {
-    Print(L"Failed to Locate EFI Simple File System Protocol.\n");
+  EFI_PHYSICAL_ADDRESS BufferAddress;
+  UINTN BufferPageSize;
+  Status = LoadFile(KernelPath,&BufferAddress,&BufferPageSize);
+  if(EFI_ERROR(Status)){
+    Print(L"Failed to Load File: %s\n",KernelPath);
     return Status;
   }
-  Status = SimpleFile->OpenVolume (SimpleFile, &Root);
-  Print(L"SimpleFileOpenVolume=%d\n",Status);
-  if (EFI_ERROR (Status)) {
-    Print(L"Failed to Open volume.\n");
-    return Status;
-  }
-  Print(L"Loading ELF Binary %s\n",KernelPath);
-  Status = Root->Open (Root, &File, KernelPath, EFI_FILE_MODE_READ, 0);
-  Print(L"SimpleFileOpenFile=%d\n",Status);
-  if (EFI_ERROR (Status)) {
-    Print(L"Cannot open %s\n", KernelPath);
-    return Status;
-  }
-
-  UINTN FileInfoBufferSize = sizeof(EFI_FILE_INFO) + sizeof(CHAR16) * StrLen(KernelPath) + 2;
-  UINT8 FileInfoBuffer[FileInfoBufferSize];
-  Status = File->GetInfo(File, &gEfiFileInfoGuid, &FileInfoBufferSize, FileInfoBuffer);
-  Print(L"FileInfoGet=%d\n",Status);
-  if (EFI_ERROR(Status)) {
-    Print(L"Failed to Get FileInfo\n");
-    return Status;
-  }
-  
-  EFI_FILE_INFO *FileInfo = (EFI_FILE_INFO*)FileInfoBuffer;
-  UINTN KernelFileSize = FileInfo->FileSize;
-  Print(L"KernelSize=%d\n",KernelFileSize);
-  UINTN BufferPageSize = (KernelFileSize + 4095) / 4096;
-  EFI_PHYSICAL_ADDRESS BufferAddress = 0;
-  Status = gBS->AllocatePages(
-  AllocateAnyPages,
-  EfiLoaderData,
-  BufferPageSize,
-  &BufferAddress);
-  Print(L"AllocatePages=%d\n",Status);
-  if (EFI_ERROR(Status)) {
-    Print(L"Could not allocate pages\n");
-    return Status;
-  }
-  
-
- 
-  Status = File->Read(
-    File,
-    &KernelFileSize,
-    (VOID *)BufferAddress
-    );
-  if (EFI_ERROR (Status)) {
-    Print(L"Failed to Load Kernel\n");
-    return Status;
-  }
-
-  Print(L"FileLoad=%d\n",Status);
-  
   Elf32_Ehdr *Ehdr = (Elf32_Ehdr*)BufferAddress;
   Elf32_Phdr *Phdr = (Elf32_Phdr*)(BufferAddress + Ehdr->e_phoff);
   Print(L"Ehdr Address:%x\n",Ehdr);

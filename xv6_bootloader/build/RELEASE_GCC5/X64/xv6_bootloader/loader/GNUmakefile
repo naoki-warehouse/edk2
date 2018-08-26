@@ -201,6 +201,7 @@ OBJECT_FILES =  \
     $(OUTPUT_DIR)/memory_map.obj \
     $(OUTPUT_DIR)/graphic.obj \
     $(OUTPUT_DIR)/file_loader.obj \
+    $(OUTPUT_DIR)/pci.obj \
     $(OUTPUT_DIR)/AutoGen.obj
 
 STATIC_LIBRARY_FILES =  \
@@ -237,15 +238,11 @@ COMMON_DEPS = $(WORKSPACE)/MdePkg/Include/Uefi/UefiGpt.h \
               $(WORKSPACE)/MdePkg/Include/IndustryStandard/Acpi10.h \
               $(WORKSPACE)/MdePkg/Include/IndustryStandard/Bluetooth.h \
               $(WORKSPACE)/MdePkg/Include/Library/BaseLib.h \
-              $(WORKSPACE)/MdePkg/Include/Library/MemoryAllocationLib.h \
               $(WORKSPACE)/MdePkg/Include/IndustryStandard/AcpiAml.h \
               $(WORKSPACE)/MdePkg/Include/IndustryStandard/Acpi51.h \
               $(WORKSPACE)/MdePkg/Include/IndustryStandard/Acpi50.h \
               $(DEBUG_DIR)/AutoGen.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/DriverConfiguration.h \
-              $(WORKSPACE)/MdePkg/Include/Protocol/BlockIo.h \
-              $(WORKSPACE)/MdePkg/Include/Library/DevicePathLib.h \
-              $(WORKSPACE)/MdePkg/Include/Library/BaseMemoryLib.h \
               $(WORKSPACE)/MdePkg/Include/Uefi/UefiInternalFormRepresentation.h \
               $(WORKSPACE)/MdePkg/Include/X64/ProcessorBind.h \
               $(WORKSPACE)/MdePkg/Include/Uefi.h \
@@ -255,10 +252,8 @@ COMMON_DEPS = $(WORKSPACE)/MdePkg/Include/Uefi/UefiGpt.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/SimpleTextInEx.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/DriverDiagnostics.h \
               $(WORKSPACE)/MdePkg/Include/IndustryStandard/Acpi20.h \
-              $(WORKSPACE)/MdePkg/Include/Protocol/LoadedImage.h \
               $(WORKSPACE)/MdePkg/Include/Uefi/UefiMultiPhase.h \
               $(WORKSPACE)/MdePkg/Include/Base.h \
-              $(WORKSPACE)/MdePkg/Include/Library/UefiBootServicesTableLib.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/ComponentName2.h \
               $(WORKSPACE)/MdePkg/Include/Library/UefiLib.h \
               $(WORKSPACE)/MdePkg/Include/IndustryStandard/Acpi40.h \
@@ -266,12 +261,10 @@ COMMON_DEPS = $(WORKSPACE)/MdePkg/Include/Uefi/UefiGpt.h \
               $(WORKSPACE)/MdePkg/Include/Guid/PcAnsi.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/DriverDiagnostics2.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/GraphicsOutput.h \
-              $(WORKSPACE)/MdePkg/Include/Protocol/SimpleFileSystem.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/DevicePath.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/SimpleTextOut.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/DriverConfiguration2.h \
               $(WORKSPACE)/MdePkg/Include/Uefi/UefiBaseType.h \
-              $(WORKSPACE)/MdePkg/Include/Guid/FileInfo.h \
               $(WORKSPACE)/MdePkg/Include/Protocol/ComponentName.h \
               
 
@@ -422,24 +415,55 @@ $(OUTPUT_DIR)/AutoGen.obj : $(DEBUG_DIR)/AutoGen.c
 
 $(OUTPUT_DIR)/graphic.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)/graphic.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/xv6_bootloader/graphic.h
 $(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/xv6_bootloader/file_loader.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Library/UefiBootServicesTableLib.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Library/MemoryAllocationLib.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Protocol/SimpleFileSystem.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/xv6_bootloader/graphic.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Guid/FileInfo.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Protocol/BlockIo.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Library/DevicePathLib.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Library/BaseMemoryLib.h
+$(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/MdePkg/Include/Protocol/LoadedImage.h
 $(OUTPUT_DIR)/graphic.obj : $(WORKSPACE)/xv6_bootloader/graphic.c
 	"$(CC)" $(CC_FLAGS) -c -o /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/./graphic.obj $(INC) /home/naoki/XV6/edk2/xv6_bootloader/graphic.c
 
+$(OUTPUT_DIR)/pci.obj : $(MAKE_FILE)
+$(OUTPUT_DIR)/pci.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)/pci.obj : $(WORKSPACE)/xv6_bootloader/pci.h
+$(OUTPUT_DIR)/pci.obj : $(WORKSPACE)/xv6_bootloader/pci.c
+	"$(CC)" $(CC_FLAGS) -c -o /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/./pci.obj $(INC) /home/naoki/XV6/edk2/xv6_bootloader/pci.c
+
 $(OUTPUT_DIR)/loader.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)/loader.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/graphic.h
 $(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/memory_map.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Library/UefiBootServicesTableLib.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Library/MemoryAllocationLib.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Protocol/SimpleFileSystem.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/graphic.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/pci.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Guid/FileInfo.h
 $(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/structs.h
 $(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/relocate.h
-$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/elf.h
 $(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Guid/Acpi.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Protocol/BlockIo.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/elf.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Library/DevicePathLib.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Library/BaseMemoryLib.h
+$(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/MdePkg/Include/Protocol/LoadedImage.h
 $(OUTPUT_DIR)/loader.obj : $(WORKSPACE)/xv6_bootloader/loader.c
 	"$(CC)" $(CC_FLAGS) -c -o /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/./loader.obj $(INC) /home/naoki/XV6/edk2/xv6_bootloader/loader.c
 
 $(OUTPUT_DIR)/file_loader.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)/file_loader.obj : $(COMMON_DEPS)
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Library/UefiBootServicesTableLib.h
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Library/MemoryAllocationLib.h
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Protocol/SimpleFileSystem.h
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Guid/FileInfo.h
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Protocol/BlockIo.h
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Library/DevicePathLib.h
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Library/BaseMemoryLib.h
+$(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/MdePkg/Include/Protocol/LoadedImage.h
 $(OUTPUT_DIR)/file_loader.obj : $(WORKSPACE)/xv6_bootloader/file_loader.c
 	"$(CC)" $(CC_FLAGS) -c -o /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/./file_loader.obj $(INC) /home/naoki/XV6/edk2/xv6_bootloader/file_loader.c
 
@@ -447,14 +471,30 @@ $(OUTPUT_DIR)/memory_map.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)/memory_map.obj : $(COMMON_DEPS)
 $(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Library/PrintLib.h
 $(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/xv6_bootloader/memory_map.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Library/UefiBootServicesTableLib.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Library/MemoryAllocationLib.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Protocol/SimpleFileSystem.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Guid/FileInfo.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Protocol/BlockIo.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Library/DevicePathLib.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Library/BaseMemoryLib.h
+$(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/MdePkg/Include/Protocol/LoadedImage.h
 $(OUTPUT_DIR)/memory_map.obj : $(WORKSPACE)/xv6_bootloader/memory_map.c
 	"$(CC)" $(CC_FLAGS) -c -o /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/./memory_map.obj $(INC) /home/naoki/XV6/edk2/xv6_bootloader/memory_map.c
 
 $(OUTPUT_DIR)/relocate.obj : $(MAKE_FILE)
 $(OUTPUT_DIR)/relocate.obj : $(COMMON_DEPS)
-$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/xv6_bootloader/relocate.h
-$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/xv6_bootloader/elf.h
 $(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/xv6_bootloader/file_loader.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Library/UefiBootServicesTableLib.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Library/MemoryAllocationLib.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Protocol/SimpleFileSystem.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Guid/FileInfo.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/xv6_bootloader/relocate.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Protocol/BlockIo.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/xv6_bootloader/elf.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Library/DevicePathLib.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Library/BaseMemoryLib.h
+$(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/MdePkg/Include/Protocol/LoadedImage.h
 $(OUTPUT_DIR)/relocate.obj : $(WORKSPACE)/xv6_bootloader/relocate.c
 	"$(CC)" $(CC_FLAGS) -c -o /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/OUTPUT/./relocate.obj $(INC) /home/naoki/XV6/edk2/xv6_bootloader/relocate.c
 

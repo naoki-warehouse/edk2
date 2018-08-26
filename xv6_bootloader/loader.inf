@@ -12,6 +12,8 @@
   memory_map.c
   graphic.c
   file_loader.c
+  pci.c
+
 
 [Packages]
   MdePkg/MdePkg.dec

@@ -51,12 +51,14 @@
 /home/naoki/XV6/edk2/xv6_bootloader/build/RELEASE_GCC5/X64/xv6_bootloader/loader/DEBUG/AutoGen.h
 /home/naoki/XV6/edk2/MdePkg/Include/Library/UefiLib.h
 /home/naoki/XV6/edk2/MdePkg/Include/IndustryStandard/Acpi40.h
+/home/naoki/XV6/edk2/xv6_bootloader/pci.c
 /home/naoki/XV6/edk2/MdePkg/Include/Protocol/DriverBinding.h
 /home/naoki/XV6/edk2/MdePkg/Include/Uefi/UefiBaseType.h
 /home/naoki/XV6/edk2/MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
 /home/naoki/XV6/edk2/MdePkg/Library/UefiDebugLibConOut/UefiDebugLibConOut.inf
 /home/naoki/XV6/edk2/MdePkg/Include/Protocol/GraphicsOutput.h
 /home/naoki/XV6/edk2/MdePkg/Include/Protocol/SimpleFileSystem.h
+/home/naoki/XV6/edk2/xv6_bootloader/pci.h
 /home/naoki/XV6/edk2/MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
 /home/naoki/XV6/edk2/MdePkg/Include/Library/DevicePathLib.h
 /home/naoki/XV6/edk2/xv6_bootloader/structs.h
